@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="description" content="Purify Clinic je digitální produktový koncept pro longevity péči. Spojuje veřejnou prezentaci kliniky, klientské rezervace a osobní plán s odděleným staff rozhraním pro provozní workflow." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="Purify Clinic · projekt Martina Švandy" />
+    <meta property="og:description" content="Purify Clinic je digitální produktový koncept pro longevity péči. Spojuje veřejnou prezentaci kliniky, klientské rezervace a osobní plán s odděleným staff rozhraním pro provozní workflow." />
+    <meta property="og:url" content="https://emperorkundis.github.io/macos-portfolio-pages/purify-clinic/" />
+    <meta name="twitter:card" content="summary" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data: https:; base-uri 'none'; form-action 'none'" />
+    <link rel="canonical" href="https://emperorkundis.github.io/macos-portfolio-pages/purify-clinic/" />
+    <link rel="stylesheet" href="../assets/showcase.css" />
+    <title>Purify Clinic · projekt Martina Švandy</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <div class="shell">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../">Martin Švanda / Projekty</a>
+        <div class="nav-links"><a href="https://svanda.tech/projekty/purify-clinic">Plný profil</a><a href="https://svanda.tech">svanda.tech</a></div>
+      </nav>
+      <main id="obsah">
+        <header class="hero">
+          <p class="eyebrow">Projekt #36 · Produkt · Koncept</p>
+          <h1>Purify Clinic</h1>
+          <p class="lede">Purify Clinic je digitální produktový koncept pro longevity péči. Spojuje veřejnou prezentaci kliniky, klientské rezervace a osobní plán s odděleným staff rozhraním pro provozní workflow.</p>
+          <div class="actions">
+            <a class="button" href="https://emperorkundis.github.io/purify-clinic/">Otevřít projekt</a>
+            <a class="button secondary" href="https://svanda.tech/projekty/purify-clinic">Kompletní profil</a>
+          </div>
+        </header>
+        <section class="facts" aria-label="Projekt v kostce">
+          <article class="fact"><p class="label">Stav</p><p class="value">Koncept</p></article><article class="fact"><p class="label">Dostupnost</p><p class="value">Veřejný provoz</p></article><article class="fact"><p class="label">Zdrojový kód</p><p class="value">Repozitář není veřejně propojený</p></article><article class="fact"><p class="label">Typ projektu</p><p class="value">Produkt</p></article>
+        </section>
+        <div class="content-grid">
+          <section class="panel"><p class="eyebrow">Problém a přínos</p><h2>Proč projekt vznikl</h2><p>Jednotná produktová architektura ukazuje, jak lze propojit první kontakt klienta, rezervaci, osobní plán a interní správu bez roztříštěného uživatelského zážitku.</p></section>
+          <section class="panel"><p class="eyebrow">Realizace</p><h2>Jak jsem ho stavěl</h2><p>Navrhl jsem Angular frontend pro veřejný web, klientský portál a staff část a doplnil Django REST backend rozdělený do samostatných domén. Veřejný Pages náhled ověřuje prezentační vrstvu; backend a práce s citlivými daty zůstávají mimo veřejný deployment.</p></section>
+          <section class="panel"><p class="eyebrow">Technické řešení</p><h2>Technologie podle části</h2><div class="stack-groups"><section class="stack-group"><p class="label">Frontend</p><div class="tags"><span class="tag">Angular 21</span><span class="tag">TypeScript</span></div></section><section class="stack-group"><p class="label">Backend</p><div class="tags"><span class="tag">Django 5</span><span class="tag">Django REST Framework</span><span class="tag">JWT</span></div></section></div></section>
+          <section class="panel"><p class="eyebrow">Reflexe</p><h2>Co jsem se při projektu naučil</h2><p>Naučil jsem se rozdělit aplikaci do veřejného webu, klientského portálu a staff části a zároveň držet backendové domény oddělené podle odpovědnosti. JWT autentizace mi připomněla, že přístupové hranice musí být navržené už ve struktuře API. Veřejný Pages náhled jsem záměrně omezil na prezentační vrstvu, protože backend a citlivá data vyžadují jiný způsob nasazení a ověření.</p></section>
+          <section class="panel"><p class="eyebrow">Ověřitelnost</p><h2>Co je veřejně doložitelné</h2><ul class="proof"><li>Veřejný frontendový náhled; backend ani klinický provoz nejsou součástí deploymentu.</li><li>Veřejný provoz je propojen přímo z prezentace.</li><li>Zdrojový repozitář není veřejně propojen.</li></ul></section>
+          <section class="panel wide"><p class="eyebrow">Repo audit · 2026-08-04</p><h2>Ověřené důkazy a publikační hranice</h2><p class="result-count">Auditovaný commit 19b4448a28a4 · Frontendový produktový koncept</p><div class="audit-columns"><div><h3>Ověřené v repozitáři</h3><ul class="proof"><li>Angular frontend obsahuje veřejný web, klientský portál a interní staff rozhraní.</li><li>Klientská část pokrývá dashboard, rezervace, osobní plán a profil.</li><li>Backendový návrh používá Django REST API, JWT a oddělené doménové moduly.</li></ul></div><div><h3>Stav a hranice</h3><ul class="proof limitations"><li>Veřejný Pages build je pouze frontend a není napojený na veřejně dostupný backend.</li><li>Vývojové backendové nastavení není připravené pro produkční práci se zdravotními daty.</li><li>Projekt nedokládá zdravotnickou certifikaci, compliance ani reálný klinický provoz.</li></ul></div></div></section>
+          <section class="panel wide"><p class="eyebrow">Další krok</p><h2>Prohlédnout projekt v kontextu celého portfolia</h2><p>Na svanda.tech je rozšířený profil, související projekty, galerie a aktuální odkazy na provoz nebo zdrojový kód.</p><div class="actions"><a class="button" href="https://svanda.tech/projekty/purify-clinic">Otevřít profil na svanda.tech</a><a class="button secondary" href="https://emperorkundis.github.io/purify-clinic/">Veřejný projekt</a></div></section>
+        </div>
+      </main>
+      <footer class="footer"><span>Martin Švanda · CEO / CTO · Praut s.r.o.</span><span>One-pager generovaný z ověřovaného katalogu portfolia</span></footer>
+    </div>
+  </body>
+</html>

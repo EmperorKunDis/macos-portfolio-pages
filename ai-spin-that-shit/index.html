@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="description" content="AI Spin That Shit je experimentální Python CLI pro koordinaci specializovaných rolí Claude Code. Rozděluje práci mezi plánování, návrh, implementaci, review a testování a zachovává průběh v projektových handoffech a checkpointech." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="AI Spin That Shit · projekt Martina Švandy" />
+    <meta property="og:description" content="AI Spin That Shit je experimentální Python CLI pro koordinaci specializovaných rolí Claude Code. Rozděluje práci mezi plánování, návrh, implementaci, review a testování a zachovává průběh v projektových handoffech a checkpointech." />
+    <meta property="og:url" content="https://emperorkundis.github.io/macos-portfolio-pages/ai-spin-that-shit/" />
+    <meta name="twitter:card" content="summary" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data: https:; base-uri 'none'; form-action 'none'" />
+    <link rel="canonical" href="https://emperorkundis.github.io/macos-portfolio-pages/ai-spin-that-shit/" />
+    <link rel="stylesheet" href="../assets/showcase.css" />
+    <title>AI Spin That Shit · projekt Martina Švandy</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <div class="shell">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../">Martin Švanda / Projekty</a>
+        <div class="nav-links"><a href="https://svanda.tech/projekty/ai-spin-that-shit">Plný profil</a><a href="https://svanda.tech">svanda.tech</a></div>
+      </nav>
+      <main id="obsah">
+        <header class="hero">
+          <p class="eyebrow">Projekt #17 · Moje výrobky · Koncept</p>
+          <h1>AI Spin That Shit</h1>
+          <p class="lede">AI Spin That Shit je experimentální Python CLI pro koordinaci specializovaných rolí Claude Code. Rozděluje práci mezi plánování, návrh, implementaci, review a testování a zachovává průběh v projektových handoffech a checkpointech.</p>
+          <div class="actions">
+            <a class="button" href="https://github.com/EmperorKunDis/AI_SpinThatShit">Prohlédnout repozitář</a>
+            <a class="button secondary" href="https://svanda.tech/projekty/ai-spin-that-shit">Kompletní profil</a>
+            <a class="button secondary" href="https://github.com/EmperorKunDis/AI_SpinThatShit">GitHub</a>
+          </div>
+        </header>
+        <section class="facts" aria-label="Projekt v kostce">
+          <article class="fact"><p class="label">Stav</p><p class="value">Koncept</p></article><article class="fact"><p class="label">Dostupnost</p><p class="value">Portfolio ukázka</p></article><article class="fact"><p class="label">Zdrojový kód</p><p class="value">Veřejný repozitář</p></article><article class="fact"><p class="label">Typ projektu</p><p class="value">Moje výrobky</p></article>
+        </section>
+        <div class="content-grid">
+          <section class="panel"><p class="eyebrow">Problém a přínos</p><h2>Proč projekt vznikl</h2><p>Oddělené role a trvalé artefakty pomáhají navázat na delší agentní běhy a zpětně dohledat jejich průběh. Projekt slouží jako výzkumný prototyp pro hledání bezpečnějšího a reprodukovatelnějšího agentního vývoje.</p></section>
+          <section class="panel"><p class="eyebrow">Realizace</p><h2>Jak jsem ho stavěl</h2><p>Postavil jsem Python orchestrace nad Claude Code CLI, stavovým adresářem a Git workflow. Implementoval jsem journal, checkpointy, retry/backoff, handoff dokumenty a základní statické a security kontroly. Audit zároveň ukázal, že před praktickým nasazením je nutné odstranit obcházení oprávnění, zablokovat nebezpečné Git akce a doplnit testy a CI.</p></section>
+          <section class="panel"><p class="eyebrow">Technické řešení</p><h2>Technologie podle části</h2><div class="stack-groups"><section class="stack-group"><p class="label">Backend</p><div class="tags"><span class="tag">Python</span></div></section><section class="stack-group"><p class="label">AI / LLM</p><div class="tags"><span class="tag">Claude Code</span></div></section><section class="stack-group"><p class="label">Data &amp; Infrastruktura</p><div class="tags"><span class="tag">JSON</span><span class="tag">Markdown</span></div></section><section class="stack-group"><p class="label">Automatizace / Integrace</p><div class="tags"><span class="tag">Bash</span></div></section><section class="stack-group"><p class="label">Nástroje &amp; DevOps</p><div class="tags"><span class="tag">Git</span></div></section></div></section>
+          <section class="panel"><p class="eyebrow">Reflexe</p><h2>Co jsem se při projektu naučil</h2><p>Naučil jsem se, že agentní orchestrace potřebuje trvalý stav, checkpointy a jasné handoffy, jinak se po chybě nedá bezpečně obnovit. Journal a retry/backoff mi pomohly oddělit přechodné selhání od skutečně zablokované práce. Audit projektu mi také připomněl, že automatizace nesmí obcházet oprávnění a nebezpečné Git operace musí mít tvrdé ochranné hranice.</p></section>
+          <section class="panel"><p class="eyebrow">Ověřitelnost</p><h2>Co je veřejně doložitelné</h2><ul class="proof"><li>Experimentální R&amp;D prototyp; není určený k neřízenému produkčnímu použití.</li><li>Veřejná provozní URL není uvedena.</li><li>Zdrojový repozitář je veřejně propojen.</li></ul></section>
+          <section class="panel wide"><p class="eyebrow">Repo audit · 2026-08-04</p><h2>Ověřené důkazy a publikační hranice</h2><p class="result-count">Auditovaný commit 118f0da9ec47 · Experimentální CLI prototyp</p><div class="audit-columns"><div><h3>Ověřené v repozitáři</h3><ul class="proof"><li>Python CLI koordinuje osm specializovaných agentních rolí.</li><li>Ukládá plán, journal, handoffy a checkpointy do projektového adresáře.</li><li>Obsahuje 32 lokalizací a základní Git, retry a pattern-based security kontroly.</li></ul></div><div><h3>Stav a hranice</h3><ul class="proof limitations"><li>Runtime používá režim přeskočení oprávnění a automatické Git operace.</li><li>Repozitář nemá automatizované testy, CI ani licenci.</li><li>Projekt je R&amp;D koncept, nikoli bezpečný autonomní produkční systém.</li></ul></div></div></section>
+          <section class="panel wide"><p class="eyebrow">Další krok</p><h2>Prohlédnout projekt v kontextu celého portfolia</h2><p>Na svanda.tech je rozšířený profil, související projekty, galerie a aktuální odkazy na provoz nebo zdrojový kód.</p><div class="actions"><a class="button" href="https://svanda.tech/projekty/ai-spin-that-shit">Otevřít profil na svanda.tech</a></div></section>
+        </div>
+      </main>
+      <footer class="footer"><span>Martin Švanda · CEO / CTO · Praut s.r.o.</span><span>One-pager generovaný z ověřovaného katalogu portfolia</span></footer>
+    </div>
+  </body>
+</html>

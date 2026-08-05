@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="description" content="Vojta Žižka je webový prototyp pro přepis audia pomocí Whisperu. FastAPI a Jinja rozhraní obsluhuje nahrání souboru, synchronní ML inference přes FFmpeg/stable-whisper, historii úloh v SQLite a stažení textového výsledku." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="Vojta Žižka · projekt Martina Švandy" />
+    <meta property="og:description" content="Vojta Žižka je webový prototyp pro přepis audia pomocí Whisperu. FastAPI a Jinja rozhraní obsluhuje nahrání souboru, synchronní ML inference přes FFmpeg/stable-whisper, historii úloh v SQLite a stažení textového výsledku." />
+    <meta property="og:url" content="https://emperorkundis.github.io/macos-portfolio-pages/vojta-zizka/" />
+    <meta name="twitter:card" content="summary" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data: https:; base-uri 'none'; form-action 'none'" />
+    <link rel="canonical" href="https://emperorkundis.github.io/macos-portfolio-pages/vojta-zizka/" />
+    <link rel="stylesheet" href="../assets/showcase.css" />
+    <title>Vojta Žižka · projekt Martina Švandy</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <div class="shell">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../">Martin Švanda / Projekty</a>
+        <div class="nav-links"><a href="https://svanda.tech/projekty/vojta-zizka">Plný profil</a><a href="https://svanda.tech">svanda.tech</a></div>
+      </nav>
+      <main id="obsah">
+        <header class="hero">
+          <p class="eyebrow">Projekt #32 · Produkt · Aktivní vývoj</p>
+          <h1>Vojta Žižka</h1>
+          <p class="lede">Vojta Žižka je webový prototyp pro přepis audia pomocí Whisperu. FastAPI a Jinja rozhraní obsluhuje nahrání souboru, synchronní ML inference přes FFmpeg/stable-whisper, historii úloh v SQLite a stažení textového výsledku.</p>
+          <div class="actions">
+            <a class="button" href="https://github.com/EmperorKunDis/ZizkaTranscribe.git">Prohlédnout repozitář</a>
+            <a class="button secondary" href="https://svanda.tech/projekty/vojta-zizka">Kompletní profil</a>
+            <a class="button secondary" href="https://github.com/EmperorKunDis/ZizkaTranscribe.git">GitHub</a>
+          </div>
+        </header>
+        <section class="facts" aria-label="Projekt v kostce">
+          <article class="fact"><p class="label">Stav</p><p class="value">Aktivní vývoj</p></article><article class="fact"><p class="label">Dostupnost</p><p class="value">Portfolio ukázka</p></article><article class="fact"><p class="label">Zdrojový kód</p><p class="value">Veřejný repozitář</p></article><article class="fact"><p class="label">Typ projektu</p><p class="value">Produkt</p></article>
+        </section>
+        <div class="content-grid">
+          <section class="panel"><p class="eyebrow">Problém a přínos</p><h2>Proč projekt vznikl</h2><p>Projekt ukazuje jednoduchý tok od uploadu audia po lokální speech-to-text výsledek v jednom webovém rozhraní. Docker základ umožňuje aplikaci izolovaně spustit na vlastním serveru.</p></section>
+          <section class="panel"><p class="eyebrow">Realizace</p><h2>Jak jsem ho stavěl</h2><p>Propojil jsem FastAPI, Jinja2, SQLAlchemy/SQLite, FFmpeg a stable-whisper do jednoho monolitického prototypu. Implementoval jsem upload, volbu modelu, historii a stažení výsledku. Audit ukázal, že před produkčním provozem je nutné oddělit inference do fronty, doplnit autentizaci, limity, retenční politiku a testy.</p></section>
+          <section class="panel"><p class="eyebrow">Technické řešení</p><h2>Technologie podle části</h2><div class="stack-groups"><section class="stack-group"><p class="label">Frontend</p><div class="tags"><span class="tag">Jinja2</span></div></section><section class="stack-group"><p class="label">Backend</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span></div></section><section class="stack-group"><p class="label">AI / LLM</p><div class="tags"><span class="tag">Whisper</span></div></section><section class="stack-group"><p class="label">Data &amp; Infrastruktura</p><div class="tags"><span class="tag">SQLite</span></div></section><section class="stack-group"><p class="label">Automatizace / Integrace</p><div class="tags"><span class="tag">FFmpeg</span></div></section><section class="stack-group"><p class="label">Nástroje &amp; DevOps</p><div class="tags"><span class="tag">Docker</span></div></section></div></section>
+          <section class="panel"><p class="eyebrow">Reflexe</p><h2>Co jsem se při projektu naučil</h2><p>Naučil jsem se propojit upload, zpracování médií, přepis a historii výsledků do jednoho srozumitelného toku. Monolitický prototyp mi rychle ověřil funkčnost, ale současně ukázal hranice synchronní inference a potřebu fronty, autentizace, limitů a retenční politiky před produkčním provozem. Oddělení těchto požadavků od samotného Whisper přepisu mi zpřesnilo pohled na provozní připravenost AI aplikací.</p></section>
+          <section class="panel"><p class="eyebrow">Ověřitelnost</p><h2>Co je veřejně doložitelné</h2><ul class="proof"><li>Technický prototyp; GitHub Pages hostuje pouze dokumentaci, nikoli samotnou ML aplikaci.</li><li>Veřejná provozní URL není uvedena.</li><li>Zdrojový repozitář je veřejně propojen.</li></ul></section>
+          <section class="panel wide"><p class="eyebrow">Repo audit · 2026-08-04</p><h2>Ověřené důkazy a publikační hranice</h2><p class="result-count">Auditovaný commit ef7b1ec · FastAPI/Whisper prototyp</p><div class="audit-columns"><div><h3>Ověřené v repozitáři</h3><ul class="proof"><li>FastAPI rozhraní spojuje upload audia, Whisper inference, SQLite historii a stažení výsledku.</li><li>Repozitář obsahuje Docker základ a lokální zpracování řeči po stažení modelu.</li><li>Tři HTTP routy a jedna databázová tabulka tvoří kompaktní monolitický prototyp.</li></ul></div><div><h3>Stav a hranice</h3><ul class="proof limitations"><li>GitHub Pages zobrazuje pouze dokumentaci a nemůže provozovat FastAPI, Whisper ani FFmpeg.</li><li>Překlad a VTT nejsou z běžného formuláře plně funkčně propojené.</li><li>Před veřejným provozem jsou nutné autentizace, limity uploadu, retence, fronta úloh a testy.</li></ul></div></div></section>
+          <section class="panel wide"><p class="eyebrow">Další krok</p><h2>Prohlédnout projekt v kontextu celého portfolia</h2><p>Na svanda.tech je rozšířený profil, související projekty, galerie a aktuální odkazy na provoz nebo zdrojový kód.</p><div class="actions"><a class="button" href="https://svanda.tech/projekty/vojta-zizka">Otevřít profil na svanda.tech</a></div></section>
+        </div>
+      </main>
+      <footer class="footer"><span>Martin Švanda · CEO / CTO · Praut s.r.o.</span><span>One-pager generovaný z ověřovaného katalogu portfolia</span></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emperorkundis.github.io/macos-portfolio-pages/sitemap.xml

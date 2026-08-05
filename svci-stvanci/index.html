@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="description" content="SVCI / Štvanci je full-stack digitální základna československé herní komunity. Propojuje výraznou 3D prezentaci klanu s členskými profily, událostmi, oceněními a řízenými nástroji pro vedení." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="SVCI / Štvanci · projekt Martina Švandy" />
+    <meta property="og:description" content="SVCI / Štvanci je full-stack digitální základna československé herní komunity. Propojuje výraznou 3D prezentaci klanu s členskými profily, událostmi, oceněními a řízenými nástroji pro vedení." />
+    <meta property="og:url" content="https://emperorkundis.github.io/macos-portfolio-pages/svci-stvanci/" />
+    <meta name="twitter:card" content="summary" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data: https:; base-uri 'none'; form-action 'none'" />
+    <link rel="canonical" href="https://emperorkundis.github.io/macos-portfolio-pages/svci-stvanci/" />
+    <link rel="stylesheet" href="../assets/showcase.css" />
+    <title>SVCI / Štvanci · projekt Martina Švandy</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <div class="shell">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../">Martin Švanda / Projekty</a>
+        <div class="nav-links"><a href="https://svanda.tech/projekty/svci-stvanci">Plný profil</a><a href="https://svanda.tech">svanda.tech</a></div>
+      </nav>
+      <main id="obsah">
+        <header class="hero">
+          <p class="eyebrow">Projekt #46 · Hobby · Aktivní vývoj</p>
+          <h1>SVCI / Štvanci</h1>
+          <p class="lede">SVCI / Štvanci je full-stack digitální základna československé herní komunity. Propojuje výraznou 3D prezentaci klanu s členskými profily, událostmi, oceněními a řízenými nástroji pro vedení.</p>
+          <div class="actions">
+            <a class="button" href="https://svci.vercel.app/">Otevřít projekt</a>
+            <a class="button secondary" href="https://svanda.tech/projekty/svci-stvanci">Kompletní profil</a>
+          </div>
+        </header>
+        <section class="facts" aria-label="Projekt v kostce">
+          <article class="fact"><p class="label">Stav</p><p class="value">Aktivní vývoj</p></article><article class="fact"><p class="label">Dostupnost</p><p class="value">Veřejný provoz</p></article><article class="fact"><p class="label">Zdrojový kód</p><p class="value">Repozitář není veřejně propojený</p></article><article class="fact"><p class="label">Typ projektu</p><p class="value">Hobby</p></article>
+        </section>
+        <div class="content-grid">
+          <section class="panel"><p class="eyebrow">Problém a přínos</p><h2>Proč projekt vznikl</h2><p>Komunita získává jeden veřejný vstupní bod i strukturované členské zázemí. Role oddělují běžné členy od správy a citlivá členská data nejsou součástí veřejného profilu.</p></section>
+          <section class="panel"><p class="eyebrow">Realizace</p><h2>Jak jsem ho stavěl</h2><p>Postavil jsem React/Vite frontend s Three.js vizuálem a Django REST backend nad PostgreSQL. Doplnil jsem přihlášenou členskou část, role, události a ocenění, kontejnerový provoz i automatizovaný backendový, frontendový a Playwright testovací řetězec před deploymentem.</p></section>
+          <section class="panel"><p class="eyebrow">Technické řešení</p><h2>Technologie podle části</h2><div class="stack-groups"><section class="stack-group"><p class="label">Frontend</p><div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Three.js</span></div></section><section class="stack-group"><p class="label">Backend</p><div class="tags"><span class="tag">Django</span><span class="tag">Django REST Framework</span></div></section><section class="stack-group"><p class="label">Data &amp; Infrastruktura</p><div class="tags"><span class="tag">PostgreSQL</span></div></section><section class="stack-group"><p class="label">Nástroje &amp; DevOps</p><div class="tags"><span class="tag">Docker Compose</span><span class="tag">Playwright</span></div></section></div></section>
+          <section class="panel"><p class="eyebrow">Reflexe</p><h2>Co jsem se při projektu naučil</h2><p>Naučil jsem se propojit výrazný Three.js vizuál s praktickou členskou aplikací, aniž by 3D vrstva zastínila navigaci a obsah. Role, události a ocenění mi pomohly navrhnout doménu pro komunitní web nad Django REST API a PostgreSQL. Docker Compose a Playwright jsem použil k tomu, aby frontend, backend a uživatelské toky šly ověřovat společně před nasazením.</p></section>
+          <section class="panel"><p class="eyebrow">Ověřitelnost</p><h2>Co je veřejně doložitelné</h2><ul class="proof"><li>Živá komunitní platforma; členská data a kanonický zdroj jsou privátní.</li><li>Veřejný provoz je propojen přímo z prezentace.</li><li>Zdrojový repozitář není veřejně propojen.</li></ul></section>
+          <section class="panel wide"><p class="eyebrow">Repo audit · 2026-08-04</p><h2>Ověřené důkazy a publikační hranice</h2><p class="result-count">Auditovaný commit 29c4e0df76d4 · Živá komunitní full-stack platforma</p><div class="audit-columns"><div><h3>Ověřené v repozitáři</h3><ul class="proof"><li>Platforma kombinuje veřejnou prezentaci, 3D vizuál, vedení a sanitizovaný veřejný roster.</li><li>Přihlášená členská část obsahuje profily, události, ocenění a rolemi řízené nástroje.</li><li>Kanonický zdroj má backendové, frontendové a E2E testy následované produkčním deploymentem.</li></ul></div><div><h3>Stav a hranice</h3><ul class="proof limitations"><li>Pomocný datový repozitář není samostatná aplikace ani veřejný zdroj členských dat.</li><li>Starší veřejné repozitáře používají odlišné označení a stack a nejsou kanonickým zdrojem.</li><li>Privátní zdroj, členský dataset, interní odkazy a provozní konfigurace zůstávají neveřejné.</li></ul></div></div></section>
+          <section class="panel wide"><p class="eyebrow">Další krok</p><h2>Prohlédnout projekt v kontextu celého portfolia</h2><p>Na svanda.tech je rozšířený profil, související projekty, galerie a aktuální odkazy na provoz nebo zdrojový kód.</p><div class="actions"><a class="button" href="https://svanda.tech/projekty/svci-stvanci">Otevřít profil na svanda.tech</a><a class="button secondary" href="https://svci.vercel.app/">Veřejný projekt</a></div></section>
+        </div>
+      </main>
+      <footer class="footer"><span>Martin Švanda · CEO / CTO · Praut s.r.o.</span><span>One-pager generovaný z ověřovaného katalogu portfolia</span></footer>
+    </div>
+  </body>
+</html>
