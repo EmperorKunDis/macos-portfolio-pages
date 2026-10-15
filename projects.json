@@ -61,8 +61,8 @@
     "category": "Produkt",
     "categoryKey": "Produkt",
     "description": "PostHub je SaaS pro plánování a tvorbu firemního obsahu s kontextem značky, personami, redakčním workflow a správou předplatného.",
-    "benefits": "Tým může navázat návrhy na firemní DNA a cílové publikum, upravit obsah a před publikací jej lidsky schválit. Historická zkušenost zahrnuje měsíce provozu se stovkami klientů.",
-    "buildStory": "Vyvíjel jsem a provozoval víceuživatelský produkt s Angular frontendem, Django API, PostgreSQL/pgvector a Redis/Celery workery. Datový model odděloval organizace, firmy, kontext značky a generovací úlohy; billing používal podepsané Stripe webhooky a evidenci zpracovaných událostí. Jde o doloženou historii provozu, ne tvrzení o aktuální dostupnosti.",
+    "benefits": "Tým může navázat návrhy na firemní DNA a cílové publikum, upravit obsah a před publikací jej lidsky schválit. Zakladatel popisuje historický provoz v řádu měsíců a stovek klientů; rozsah není nezávisle ověřenou provozní metrikou.",
+    "buildStory": "Zdrojový audit dokládá víceuživatelskou architekturu s Angular frontendem, Django API, PostgreSQL/pgvector a Redis/Celery workery. Datový model odděloval organizace, firmy, kontext značky a generovací úlohy; billing používal podepsané Stripe webhooky a evidenci zpracovaných událostí. Historický provoz popisuje zakladatel; aktuální dostupnost tím není doložena.",
     "technologies": [
       "Angular",
       "Django",
@@ -96,7 +96,7 @@
     "repositoryAudit": {
       "verifiedAt": "2026-10-05",
       "commit": "c871592844f1",
-      "maturity": "SaaS provozovaný měsíce pro stovky klientů",
+      "maturity": "Historický SaaS; rozsah provozu podle zakladatele",
       "facts": [
         "PostHub běžel měsíce v plném veřejném provozu a měl stovky klientů; provozní zkušenost potvrzuje zakladatel a vývojář Martin Švanda.",
         "Auditovaný zdroj na produkční větvi odděluje Angular frontend, Django API, PostgreSQL/pgvector, Redis, Celery workery, plánovač a Nginx.",
