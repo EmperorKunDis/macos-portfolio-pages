@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#080a0f" />
+    <meta name="description" content="Datovaná revize zdroje odděluje sběr nabídek, pracovní stav, zaznamenané rozhodnutí a omezenou read-only prezentaci. Současná veřejná instalace nebyla ověřena." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:title" content="JobRadar · projekt Martina Švandy" />
+    <meta property="og:description" content="Datovaná revize zdroje odděluje sběr nabídek, pracovní stav, zaznamenané rozhodnutí a omezenou read-only prezentaci. Současná veřejná instalace nebyla ověřena." />
+    <meta property="og:url" content="https://emperorkundis.github.io/macos-portfolio-pages/jobradar/" />
+    <meta name="twitter:card" content="summary" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self' data: https:; base-uri 'none'; form-action 'none'" />
+    <link rel="canonical" href="https://emperorkundis.github.io/macos-portfolio-pages/jobradar/" />
+    <link rel="stylesheet" href="../assets/showcase.css" />
+    <title>JobRadar · projekt Martina Švandy</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
+    <div class="shell">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="../">Martin Švanda / Projekty</a>
+        <div class="nav-links"><a href="https://svanda.tech/projekty/jobradar">Plný profil</a><a href="https://svanda.tech">svanda.tech</a></div>
+      </nav>
+      <main id="obsah">
+        <header class="hero">
+          <p class="eyebrow">Projekt #54 · Produkt · Aktivní vývoj</p>
+          <h1>JobRadar</h1>
+          <p class="lede">Datovaná revize zdroje odděluje sběr nabídek, pracovní stav, zaznamenané rozhodnutí a omezenou read-only prezentaci. Současná veřejná instalace nebyla ověřena.</p>
+          <div class="actions">
+            <a class="button" href="https://svanda.tech/JobRadar/">Otevřít projekt</a>
+            <a class="button secondary" href="https://svanda.tech/projekty/jobradar">Kompletní profil</a>
+          </div>
+        </header>
+        <section class="facts" aria-label="Projekt v kostce">
+          <article class="fact"><p class="label">Stav</p><p class="value">Aktivní vývoj</p></article><article class="fact"><p class="label">Dostupnost</p><p class="value">Veřejný odkaz; provoz neověřen</p></article><article class="fact"><p class="label">Zdrojový kód</p><p class="value">Repozitář není veřejně propojený</p></article><article class="fact"><p class="label">Typ projektu</p><p class="value">Produkt</p></article>
+        </section>
+        <div class="content-grid">
+          <section class="panel"><p class="eyebrow">Katalogový kontext</p><h2>Záměr projektu</h2><p>Pracovní stav a zaznamenané oprávnění jsou oddělené od veřejné projekce.</p></section>
+          <section class="panel"><p class="eyebrow">Zdrojově prověřený popis</p><h2>Realizace v dostupných podkladech</h2><p>Prohlédnutý commit obsahuje lokální Python/FastAPI systém se SQLite, transakčními rozhodnutími nad konkrétní verzí nabídky a omezenou veřejnou API projekcí. To není doklad aktuálního nasazení, úspěšného odeslání ani přesnosti posouzení.</p></section>
+          <section class="panel"><p class="eyebrow">Technické řešení</p><h2>Technologie podle části</h2><div class="stack-groups"><section class="stack-group"><p class="label">Technologie v auditovaném zdroji</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Pydantic</span><span class="tag">SQLite</span></div></section></div></section>
+          <section class="panel"><p class="eyebrow">Ověřitelnost</p><h2>Co je veřejně doložitelné</h2><ul class="proof"><li>Datovaná revize zdroje 2026-10-15; současný provoz nebyl ověřen.</li><li>Veřejný provoz je propojen přímo z prezentace.</li><li>Zdrojový repozitář není veřejně propojen.</li></ul></section>
+          <section class="panel wide"><p class="eyebrow">Repo audit · 2026-10-15</p><h2>Ověřené důkazy a publikační hranice</h2><p class="result-count">Auditovaný commit 256022c975866dc27cc6210e4e31f1c15d7ab0b1 · Stav implementace podle prohlédnutého commitu; provoz neověřen</p><div class="audit-columns"><div><h3>Ověřené v repozitáři</h3><ul class="proof"><li>Doménový kontrakt popisuje nabídku, její původ a dostupnost. Normalizace odkazů a obsahové aliasy podporují rozpoznání souvisejících záznamů; kontrola způsobilosti posuzuje mimo jiné doložené datum a dostupnost.</li><li>Schéma odděluje zdroje, nabídky, běhy, modelové úlohy, zprávy, rozhodnutí, události a zámky. Cizí klíče a unikátní vazby vymezují části datového toku.</li><li>Rozhodnutí se zapisuje v transakci a váže se na fingerprint nabídky. Další autorizace znovu kontroluje kladné rozhodnutí i shodu nabídky. Worker rozlišuje přípravu, čekání na data, nejistý výsledek a blokaci.</li><li>Read-only výstup skládá vybrané stavy a omezené události místo raw payloadů zpráv, profilu nebo CV. Textový helper odstraňuje e-mailové adresy. Aktivita modelu vychází ze záznamu úlohy a platného vlastnického zámku.</li></ul></div><div><h3>Stav a hranice</h3><ul class="proof limitations"><li>Prohlédnut byl uvedený commit, nikoli běžící aplikace, produkční dostupnost nebo výsledek testů.</li><li>Pracovní kopie obsahuje novější nezapsané změny. Jejich chování není připsáno uvedenému commitu a současný stav nebyl ověřen.</li><li>Novější statický exportér a novější politika automatického schvalování nejsou součástí tohoto prohlédnutého commitu; studie je nevydává za jeho implementaci.</li><li>Existence modelového posouzení není měřením jeho přesnosti. Aktuální veřejná revize, doručení zpráv a úplné portálové podání nebyly ověřeny.</li><li>Zobrazení vybraných stavů není úplný audit ochrany osobních údajů, všech veřejných cest nebo všech exportovaných souborů.</li></ul></div></div></section>
+          <section class="panel wide"><p class="eyebrow">Další krok</p><h2>Prohlédnout projekt v kontextu celého portfolia</h2><p>Na svanda.tech je rozšířený profil, související projekty, galerie a aktuální odkazy na provoz nebo zdrojový kód.</p><div class="actions"><a class="button" href="https://svanda.tech/projekty/jobradar">Otevřít profil na svanda.tech</a><a class="button secondary" href="https://svanda.tech/JobRadar/">Veřejný projekt</a></div></section>
+        </div>
+      </main>
+      <footer class="footer"><span>Martin Švanda · CEO / CTO · Praut s.r.o.</span><span>One-pager generovaný z ověřovaného katalogu portfolia</span></footer>
+    </div>
+  </body>
+</html>

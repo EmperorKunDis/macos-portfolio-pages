@@ -1,109 +1,36 @@
 [
   {
-    "sourceId": "ARENA",
-    "slug": "praut-arena",
-    "title": "PRAUT//ARENA",
-    "category": "Hobby",
-    "categoryKey": "Hobby",
-    "description": "Originální retro low-poly FPS aréna proti robotům. Tři minuty, tři zbraně a jediné pravidlo: nezastavovat.",
-    "benefits": "Krátký tříminutový formát umožňuje okamžitě spustit hru v prohlížeči bez instalace. Žebříček a několik typů zbraní podporují opakované hraní a porovnání výsledků.",
-    "buildStory": "Arénu jsem postavil přímo jako součást portfolia nad Three.js a WebGL2. Implementoval jsem pohyb a míření přes Pointer Lock, tři zbraně, robotické protivníky, časovaný herní režim, Web Audio a serverově ověřovanou výsledkovou session pro žebříček.",
-    "technologies": [
-      "Three.js",
-      "WebGL2",
-      "Pointer Lock",
-      "Web Audio"
-    ],
-    "techBreakdown": [
-      {
-        "part": "Herní vývoj",
-        "items": [
-          "Three.js",
-          "WebGL2",
-          "Pointer Lock",
-          "Web Audio"
-        ]
-      }
-    ],
-    "learned": "Naučil jsem se implementovat pohyb a míření přes Pointer Lock a napojit robotické protivníky a časovaný herní režim nad Three.js a WebGL2. Řešil jsem i ozvučení přes Web Audio a serverově ověřovanou výsledkovou session pro žebříček, aby výsledky nešlo podvodně upravit na klientovi.",
-    "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
-    "source": "Repozitář není veřejně propojený",
-    "profileUrl": "https://svanda.tech/projekty/praut-arena",
-    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/praut-arena/",
-    "webUrl": "https://svanda.tech/hry/praut-arena",
-    "githubUrl": null,
-    "repositoryAudit": {
-      "verifiedAt": "2026-08-04",
-      "commit": "3665db8039f1",
-      "maturity": "Živá prohlížečová hra",
-      "facts": [
-        "Three.js/WebGL2 FPS nabízí tři zbraně, tři typy robotů, power-upy, Web Audio a dotykové ovládání.",
-        "Server vydává jednorázovou session, ukládá hash tokenu a transakčně přijme jeden výsledek.",
-        "Cílených deset testů, Quality workflow, Deploy workflow i živá herní URL byly na auditovaném SHA zelené."
-      ],
-      "limitations": [
-        "Anti-cheat je heuristický, protože herní simulace a odesílané statistiky vznikají na klientovi.",
-        "Rate limit je procesový a živá MySQL cesta není pokrytá skutečným end-to-end testem.",
-        "Bez WebGL2 není hratelný fallback a výkon se může lišit na slabších mobilních GPU."
-      ]
-    }
-  },
-  {
     "sourceId": "01",
     "slug": "mike",
     "title": "M.I.K.E.",
     "category": "Moje výrobky",
     "categoryKey": "MojeVyrobky",
-    "description": "M.I.K.E. je open-source český hlasový asistent pro Macy s Apple Silicon. Lokálně propojuje rozpoznání řeči přes Whisper/MLX, jazykový model v Ollamě, explicitní paměť, systémový hlas macOS a dashboard dostupný pouze na zařízení.",
-    "benefits": "Ve výchozím režimu zůstávají hlas, historie i paměť na zařízení. Uživatel má kontrolu nad kontextem a citlivější schopnosti — research, voiceprint a read-only terminál — zapíná vědomě.",
-    "buildStory": "Postavil jsem lokální pipeline od segmentace mikrofonního vstupu přes Whisper a Ollamu až po systémové TTS. Doplnil jsem SQLite FTS5, loopback-only dashboard, LaunchAgent, diagnostické příkazy a bezpečnostní hranice pro volitelné schopnosti. Veřejnou alpha verzi jsem vybavil testy, coverage gate, CI a Gitleaks kontrolou.",
+    "description": "M.I.K.E. je veřejná alpha českého hlasového asistenta pro Apple Silicon Mac s lokálním přepisem, jazykovým modelem, explicitní pamětí a systémovým TTS.",
+    "benefits": "Lokální architektura ponechává základní hlasový tok a paměť na zařízení. Volitelné research, voiceprint a read-only terminál mají vlastní zapínání a bezpečnostní hranice.",
+    "buildStory": "Postavil jsem hlasovou pipeline od PyAudio a segmentace přes Whisper/MLX a Ollamu až po systémový hlas macOS. SQLite FTS5 uchovává explicitně spravovanou paměť; loopback dashboard a diagnostické příkazy pomáhají odděleně kontrolovat její části. Voiceprint zůstává experimentálním pomocným signálem, ne ověřením identity pro citlivé akce.",
     "technologies": [
       "Python",
-      "FastAPI",
       "Whisper",
       "MLX",
       "Ollama",
       "SQLite FTS5",
       "PyAudio",
-      "LaunchAgent"
+      "macOS"
     ],
     "techBreakdown": [
       {
-        "part": "Backend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
           "Python",
-          "FastAPI"
-        ]
-      },
-      {
-        "part": "AI / LLM",
-        "items": [
           "Whisper",
           "MLX",
-          "Ollama"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
-          "SQLite FTS5"
-        ]
-      },
-      {
-        "part": "Automatizace / Integrace",
-        "items": [
-          "PyAudio"
-        ]
-      },
-      {
-        "part": "Nástroje & DevOps",
-        "items": [
-          "LaunchAgent"
+          "Ollama",
+          "SQLite FTS5",
+          "PyAudio",
+          "macOS"
         ]
       }
     ],
-    "learned": "Naučil jsem se skládat lokální hlasovou pipeline jako jeden celek — od segmentace mikrofonu přes přepis a lokální LLM až po hlasovou odpověď — a hlídat přitom latenci i soukromí. Ověřil jsem si, že u nástroje s volitelnými systémovými schopnostmi jsou stejně důležité bezpečnostní hranice, diagnostika a spolehlivé spouštění jako samotná AI vrstva. Testy, coverage gate a kontrola úniku tajemství mi pomohly udržet veřejnou alpha verzi ověřitelnou.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -133,80 +60,50 @@
     "title": "PostHub",
     "category": "Produkt",
     "categoryKey": "Produkt",
-    "description": "PostHub je multi-tenant SaaS MVP pro firmy a agentury, které spravují více značek. Spojuje firemní kontext, AI persony, témata, blogové a sociální návrhy, schvalování, role, obsahový kalendář a subscription billing.",
-    "benefits": "Oddělená data a role umožňují řídit více klientů v jednom workspace. Dlouhé AI úlohy běží asynchronně a jejich stav se propisuje do rozhraní přes SSE, takže uživatel nemusí čekat na blokující požadavek.",
-    "buildStory": "Navrhl jsem full-stack monorepo s Angular SPA a Django REST API. Produktová data ukládá PostgreSQL s pgvector, úlohy zpracovávají Redis a Celery a předplatné obsluhují podepsané Stripe webhooky. Součástí repozitáře jsou kontejnery, Nginx, Kubernetes manifesty a rozsáhlé backendové i frontendové testy.",
+    "description": "PostHub je SaaS pro plánování a tvorbu firemního obsahu s kontextem značky, personami, redakčním workflow a správou předplatného.",
+    "benefits": "Tým může navázat návrhy na firemní DNA a cílové publikum, upravit obsah a před publikací jej lidsky schválit. Historická zkušenost zahrnuje měsíce provozu se stovkami klientů.",
+    "buildStory": "Vyvíjel jsem a provozoval víceuživatelský produkt s Angular frontendem, Django API, PostgreSQL/pgvector a Redis/Celery workery. Datový model odděloval organizace, firmy, kontext značky a generovací úlohy; billing používal podepsané Stripe webhooky a evidenci zpracovaných událostí. Jde o doloženou historii provozu, ne tvrzení o aktuální dostupnosti.",
     "technologies": [
-      "Angular 19",
-      "Django 5",
-      "DRF",
+      "Angular",
+      "Django",
       "PostgreSQL",
       "pgvector",
       "Redis",
       "Celery",
-      "Stripe",
-      "Docker",
-      "Kubernetes"
+      "Stripe"
     ],
     "techBreakdown": [
       {
-        "part": "Frontend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
-          "Angular 19"
-        ]
-      },
-      {
-        "part": "Backend",
-        "items": [
-          "Django 5",
-          "DRF",
-          "Celery"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
+          "Angular",
+          "Django",
           "PostgreSQL",
           "pgvector",
-          "Redis"
-        ]
-      },
-      {
-        "part": "Automatizace / Integrace",
-        "items": [
+          "Redis",
+          "Celery",
           "Stripe"
-        ]
-      },
-      {
-        "part": "Nástroje & DevOps",
-        "items": [
-          "Docker",
-          "Kubernetes"
         ]
       }
     ],
-    "learned": "Naučil jsem se rozdělit produkt mezi rychlé SPA rozhraní, REST API a asynchronní frontu tak, aby dlouhé úlohy neblokovaly uživatele. Podepsané Stripe webhooky mi ukázaly, že fakturační integrace potřebuje vlastní bezpečnostní a stavovou logiku, ne jen tlačítko v UI. Kontejnery, Kubernetes manifesty a testy jsem řešil současně s produktem, protože provozní připravenost se nedá spolehlivě doplnit až na konci.",
     "status": "Aktivní vývoj",
-    "hosting": "Soukromé nasazení",
-    "source": "Veřejný repozitář",
+    "hosting": "Veřejný odkaz; provoz neověřen",
+    "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/posthub",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/posthub/",
-    "webUrl": null,
-    "githubUrl": "https://github.com/EmperorKunDis/PostHubAutoMVP",
+    "webUrl": "https://posthub.work/",
+    "githubUrl": null,
     "repositoryAudit": {
-      "verifiedAt": "2026-08-04",
-      "commit": "7a25680c6dc4",
-      "maturity": "Rozsáhlé MVP",
+      "verifiedAt": "2026-10-05",
+      "commit": "c871592844f1",
+      "maturity": "SaaS provozovaný měsíce pro stovky klientů",
       "facts": [
-        "92 backendových Python modulů a 181 Angular TypeScript souborů.",
-        "326 backendových testovacích funkcí a 280 frontendových testovacích případů.",
-        "Docker Compose, Kubernetes manifesty, Celery fronta, SSE průběh úloh a Stripe billing."
+        "PostHub běžel měsíce v plném veřejném provozu a měl stovky klientů; provozní zkušenost potvrzuje zakladatel a vývojář Martin Švanda.",
+        "Auditovaný zdroj na produkční větvi odděluje Angular frontend, Django API, PostgreSQL/pgvector, Redis, Celery workery, plánovač a Nginx.",
+        "Organizace a firmy vymezují klientská data; obsah navazuje na firemní DNA, persony, témata a generovací úlohy.",
+        "Billing ověřuje podpis Stripe webhooků a eviduje zpracované události pro idempotenci."
       ],
-      "limitations": [
-        "Veřejný produkční deploy nebyl při auditu dostupný přes DNS.",
-        "Hlavní CI/CD pipeline nebyla zelená a repozitář nemá licenci.",
-        "Přímé publikování na sociální sítě není zdrojovým kódem doložené."
-      ]
+      "limitations": []
     }
   },
   {
@@ -215,11 +112,10 @@
     "title": "Zaznamnik.pro",
     "category": "Produkt",
     "categoryKey": "Produkt",
-    "description": "Záznamník.pro je česká AI telefonní sekretářka pro firmy, které nechtějí ztrácet důležité informace ze zmeškaných hovorů. Hovor převezme, rozpozná jeho účel a naléhavost a předá strukturovaný záznam.",
-    "benefits": "Tým získá rychlý přehled o tom, kdo volal, co potřeboval a jak naléhavě je třeba reagovat. Služba omezuje ruční přepis a pomáhá prioritizovat zpětné volání.",
-    "buildStory": "Navrhl jsem full-stack službu s Django REST API, PostgreSQL, Celery/Redis a Angular frontendem. Telefonní tok propojuje Twilio s konverzačním agentem ElevenLabs a strukturovaným záznamem pro navazující práci. Produkční prostředí je veřejně dostupné, ale auditovaný HEAD zatím není totožný s nasazenou revizí.",
+    "description": "Záznamník.pro přebírá firemní telefonní hovory a převádí jejich obsah na strukturovaný požadavek pro následnou práci týmu.",
+    "benefits": "Pracovník může přehledněji určit, kdo volal, co potřebuje a zda je nutné rychle reagovat. Soukromé telefonní čísla, přepisy a klientské záznamy se ve veřejné studii nezveřejňují.",
+    "buildStory": "Navrhl jsem službu s Django REST API, PostgreSQL, Celery/Redis a Angular rozhraním; telefonní vrstva propojuje Twilio a konverzačního agenta ElevenLabs. Auditovaný zdrojový checkout se lišil od nasazené revize, proto zdrojové testy ani implementaci nepovažuji za důkaz přesné parity s produkcí. SLA a úplná funkčnost všech notifikačních kanálů nejsou doložené.",
     "technologies": [
-      "Django",
       "Django REST Framework",
       "PostgreSQL",
       "Celery",
@@ -230,37 +126,20 @@
     ],
     "techBreakdown": [
       {
-        "part": "Frontend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
-          "Angular"
-        ]
-      },
-      {
-        "part": "Backend",
-        "items": [
-          "Django",
           "Django REST Framework",
-          "Celery"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
           "PostgreSQL",
-          "Redis"
-        ]
-      },
-      {
-        "part": "Automatizace / Integrace",
-        "items": [
+          "Celery",
+          "Redis",
+          "Angular",
           "Twilio",
           "ElevenLabs"
         ]
       }
     ],
-    "learned": "Naučil jsem se navrhnout telefonní tok tak, aby hlasová konverzace, asynchronní zpracování a následný strukturovaný záznam tvořily jeden dohledatelný proces. Propojení Twilia a ElevenLabs mi ukázalo, jak zásadní jsou latence, chybové stavy a jasné hranice mezi hovorem a backendovou prací. Zároveň jsem si ověřil, že audit zdroje a kontrola skutečně nasazené revize jsou dvě odlišné části produkčního ověření.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/zaznamnik-pro",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/zaznamnik-pro/",
@@ -290,7 +169,6 @@
     "categoryKey": "Prototype",
     "description": "MedVision je interaktivní frontendový prototyp digitální zdravotnické platformy. Rozsáhlý atlas obrazovek mapuje role a workflow ambulantní péče napříč desktopem, mobilem, tabletem a kioskem.",
     "benefits": "Klikatelný produktový atlas umožňuje ověřovat informační architekturu, návaznost kroků a rozdíly mezi rolemi a zařízeními dřív, než vznikne nákladná backendová implementace.",
-    "buildStory": "Převedl jsem produktové zadání do 135 samostatných HTML obrazovek pokrývajících rezervace, check-in, platby, transkripci a workflow call centra. Prototyp slouží k diskusi a validaci uživatelských toků; veřejný profil záměrně netvrdí existenci DRG, OCR ani backendových funkcí, které zdroj nedokládá.",
     "technologies": [
       "HTML",
       "CSS",
@@ -315,7 +193,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se převést rozsáhlé produktové zadání do konzistentní sady 135 obrazovek a udržet společné vzory napříč rezervacemi, check-inem, platbami, přepisem i call centrem. Prototypování mi umožnilo ověřovat návaznost uživatelských toků dřív, než existoval backend. Současně jsem se naučil v prezentaci přesně oddělit doložené UI od funkcí, které zatím zdrojový projekt neimplementuje.",
     "status": "Koncept",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -347,7 +224,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "PrautCleaner je desktopová konzole pro správu flotily lokálních Git repozitářů. Tauri aplikace sjednocuje inventuru, stav větví a auditované hromadné Git/GitHub operace do jednoho workflow.",
     "benefits": "Vývojář získává jednotný přehled nad větším počtem pracovních kopií a může opakovatelné úkony provádět řízeně s potvrzením, logem a obnovitelnou karanténou.",
-    "buildStory": "Postavil jsem Tauri 2 aplikaci s Rust backendem a React/Vite rozhraním. Implementoval jsem sken lokálních repozitářů, práci s větvemi, backup, sync, merge a archivaci, doplněné o potvrzovací hranice a JSONL auditní stopu. Nástroj zůstává privátní a před distribucí potřebuje další testování a hardening.",
     "technologies": [
       "Tauri 2",
       "Rust",
@@ -386,7 +262,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se navrhovat desktopový nástroj pro hromadné Git operace tak, aby rychlost nikdy nepřebila bezpečnost. Potvrzovací hranice, zálohy a JSONL auditní stopa mi ukázaly, jak důležité je u potenciálně destruktivních akcí zachovat dohledatelnost a možnost kontroly. Tauri s Rust backendem mi zároveň umožnil oddělit systémové operace od prezentační React vrstvy.",
     "status": "Aktivní vývoj",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -418,7 +293,6 @@
     "categoryKey": "Produkt",
     "description": "Automatizovaný telemarketing, který startuje vyplněním webového formuláře. n8n workflow zachytí data přes webhook, doplní je o další informace o kontaktu a následně přes Twilio spustí AI hovor, který vede rozhovor podle scénáře a zaznamená výsledek.",
     "benefits": "Lead je kontaktován během několika minut od vyplnění formuláře, bez čekání na volného obchodníka. Firmám s vysokým objemem poptávek to šetří kapacitu na prvokontaktech a zajišťuje jednotnou kvalitu hovoru u každého leadu.",
-    "buildStory": "Postavil jsem to jako sled n8n workflows napojených na webhook z formuláře. Nejdřív jsem řešil obohacení dat o kontaktu z dostupných zdrojů, aby AI hovor měl kontext ještě před vytočením čísla. Pak jsem napojil Twilio na spouštění hovorů a naladil logiku AI hlasového agenta tak, aby vedl rozhovor podle scénáře a zvládal odchylky (nezvednutí, voicemail, změna tématu). Poslední část byla o zpracování výstupu hovoru a jeho předání zpět do navazujícího procesu.",
     "technologies": [
       "n8n",
       "Twilio",
@@ -445,60 +319,11 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se skládat automatizaci jako sled n8n workflows napojených na webhook z formuláře. Řešil jsem obohacení dat o kontaktu a napojení Twilia na spouštění hovorů. Doladil jsem logiku AI hlasového agenta tak, aby zvládal odchylky jako nezvednutí, voicemail nebo změnu tématu, a naučil jsem se zpracovat výstup hovoru a předat ho zpět do navazujícího procesu.",
     "status": "Aktivní vývoj",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
     "profileUrl": "https://svanda.tech/projekty/ai-telemarketing",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/ai-telemarketing/",
-    "webUrl": null,
-    "githubUrl": null,
-    "repositoryAudit": null
-  },
-  {
-    "sourceId": "07",
-    "slug": "ragzchatz",
-    "title": "RagzChatz",
-    "category": "Moje výrobky",
-    "categoryKey": "MojeVyrobky",
-    "description": "RagzChatz je interní nástroj pro rychlé sestavení lokální znalostní databáze a RAG asistenta. Dokumenty se rozdělí na chunky, zaindexují jako embeddingy do vektorové databáze Qdrant a nad nimi běží lokální LLM, které odpovídá s odkazem na zdrojový kontext. Celé to jde spustit lokálně, bez závislosti na cloudových API.",
-    "benefits": "Hodí se, když potřebuju rychle zpřístupnit interní dokumentaci nebo firemní know-how formou chatu, aniž bych data posílal ven k třetí straně. Lokální běh znamená kontrolu nad daty a nižší provozní náklady oproti placeným RAG platformám.",
-    "buildStory": "Stavěl jsem to jako interní nástroj, protože jsem potřeboval rychle prohledávat firemní dokumenty bez nutnosti nahrávat je do cloudových AI služeb. Řešil jsem hlavně chunking dokumentů a volbu embedding modelu, aby vyhledávání vracelo relevantní kontext a ne jen povrchní shody klíčových slov. Qdrant jsem vybral jako vektorovou databázi pro rychlé similarity search nad embeddingy. Doladil jsem i prompt strategii pro lokální LLM, aby odpovídal jen na základě dohledaného kontextu a neházel si vlastní domněnky. Výsledkem je jednoduchý interní chat nad vlastní znalostní bází.",
-    "technologies": [
-      "RAG",
-      "Embeddings",
-      "Qdrant",
-      "Lokální LLM",
-      "Python"
-    ],
-    "techBreakdown": [
-      {
-        "part": "Backend",
-        "items": [
-          "Python"
-        ]
-      },
-      {
-        "part": "AI / LLM",
-        "items": [
-          "RAG",
-          "Embeddings",
-          "Lokální LLM"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
-          "Qdrant"
-        ]
-      }
-    ],
-    "learned": "Naučil jsem se řešit chunking dokumentů a volbu embedding modelu, protože přímo ovlivňují kvalitu vyhledávání. Qdrant jsem vybral jako vektorovou databázi pro rychlé similarity search nad embeddingy. Doladil jsem prompt strategii pro lokální LLM tak, aby odpovídal jen na základě dohledaného kontextu, a ověřil jsem si, že firemní dokumenty díky tomu nemusí opouštět lokální prostředí.",
-    "status": "Aktivní vývoj",
-    "hosting": "Soukromé nasazení",
-    "source": "Neveřejný zdrojový kód",
-    "profileUrl": "https://svanda.tech/projekty/ragzchatz",
-    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/ragzchatz/",
     "webUrl": null,
     "githubUrl": null,
     "repositoryAudit": null
@@ -511,7 +336,6 @@
     "categoryKey": "Prototype",
     "description": "EmperorCodex je experimentální prostředí pro koordinaci AI agentů při vývoji softwaru. Zadám úlohu a systém ji rozdělí mezi jednotlivé agenty, kteří pracují souběžně na kódu, testech a review. Je to sandbox, ve kterém zkouším, jak moc lze automatizovat samotný proces psaní kódu, ne jen jeho části.",
     "benefits": "Ukazuje, kde agentní automatizace v reálném vývoji funguje a kde ještě ne — bez toho, abych to zkoušel přímo v produkčním kódu Tatooine. Slouží mi jako testovací polygon pro vzorce koordinace agentů, které pak případně přenáším do ostrých projektů.",
-    "buildStory": "Postavil jsem si oddělené prostředí, abych mohl zkoušet agentní workflow bez rizika pro hlavní projekt Tatooine. Řešil jsem hlavně to, jak rozdělit jednu úlohu mezi víc agentů tak, aby si nepletli výstupy a nepřepisovali si navzájem práci. Zkoušel jsem různé způsoby koordinace a předávání kontextu mezi jednotlivými kroky. Je to stále prototyp — funguje jako testovací báze pro to, co má smysl nasadit dál.",
     "technologies": [
       "Agents",
       "Code Automation"
@@ -530,7 +354,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, že agentní workflow potřebuje jasné rozdělení úloh mezi agenty, jinak si přepisují výstupy. Zjistil jsem, že samostatné testovací prostředí mimo hlavní projekt Tatooine mi umožnilo bezpečně zkoušet různé způsoby koordinace agentů. Vyzkoušel jsem si víc přístupů k předávání kontextu mezi jednotlivými kroky, než se ukázalo, co funguje.",
     "status": "Aktivní vývoj",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -548,7 +371,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Agent VOCAS je hlasový konverzační agent postavený jako součást projektu Tatooine. Zpracovává mluvený vstup, vede dialog a reaguje hlasem v reálném čase pomocí agentní architektury nad voice AI modely.",
     "benefits": "Umožňuje ovládat a dotazovat systémy hlasem bez psaní, což se hodí tam, kde je klávesnice nepraktická nebo kde chci rychlejší a přirozenější interakci. Základ je znovupoužitelný pro další hlasové agenty v rámci Tatooine.",
-    "buildStory": "Stavěl jsem to jako výzkumnou sondu do agentních hlasových workflow v rámci projektu Tatooine. Řešil jsem hlavně latenci mezi rozpoznáním řeči, rozhodováním agenta a syntézou odpovědi, aby konverzace působila plynule. Experimentoval jsem s různým nastavením agenta tak, aby uměl vést kontext přes více kol dialogu, ne jen odpovídat na jednotlivé dotazy.",
     "technologies": [
       "Voice AI",
       "Agents"
@@ -562,7 +384,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, že u hlasových agentů je klíčová latence mezi rozpoznáním řeči, rozhodováním a syntézou odpovědi, aby konverzace působila přirozeně. Zjistil jsem, že udržení kontextu přes víc kol dialogu vyžaduje pečlivé doladění nastavení agenta. Tenhle výzkumný projekt v rámci Tatooine mi ukázal, kde přesně vznikají prodlevy v hlasovém workflow.",
     "status": "Aktivní vývoj",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -575,57 +396,52 @@
   {
     "sourceId": "13",
     "slug": "zephyr",
-    "title": "Zephyr",
+    "title": "Zephyr / BPS dashboard",
     "category": "Prototyp",
     "categoryKey": "Prototype",
-    "description": "Zephyr je provozní dashboard pro bioplynovou stanici, který v reálném čase zobrazuje výkon, průtok bioplynu, koncentraci CH₄ a H₂S po odsíření a stav plnění plynojemu. Data jsou rozdělena do modulů Fermentace, Plyn, Kogenerace, Teplo, Materiál, Digestát, Ekonomika a Servis & alarmy. Součástí je i ekonomický přehled s denním příjmem a spotovou cenou elektřiny. Aplikace běží i v demo režimu se syntetickými daty typové zemědělské BPS o výkonu 1 MW.",
-    "benefits": "Operátorům bioplynky dává jeden přehled místo přepínání mezi SCADA obrazovkami a tabulkami – vidí okamžitě, kde hrozí problém (např. rostoucí H₂S nebo klesající výtěžnost) a jak se to promítá do tržeb. Datová mapa u každého čísla ukazuje, odkud pochází, takže provozovatel může hodnotám důvěřovat i při rozhodování o servisu.",
-    "buildStory": "Stavěl jsem to jako dashboard nad reálnými provozními daty bioplynové stanice, kde jsem si prošel s provozovatelem, které hodnoty skutečně sleduje a v jakém pořadí je potřebuje vidět. Rozdělení do modulů (Fermentace, Plyn, Kogenerace...) vzniklo podle toho, jak provozovatel fyzicky obchází stanici, ne podle datového modelu. Řešil jsem hlavně čitelnost čísel na první pohled – u kritických parametrů jako H₂S je důležité okamžitě rozeznat stav bez čtení popisků. Přidal jsem demo režim se syntetickými daty, aby šlo aplikaci ukázat i bez připojení na konkrétní provoz. Datovou mapu jsem doplnil, aby bylo jasné, z jakého senzoru nebo výpočtu každé číslo pochází.",
+    "description": "Interaktivní statický dashboard bioplynové stanice se syntetickými časovými řadami a přehledy provozu.",
+    "benefits": "Prototyp ukazuje, jak zpřehlednit energii, materiálové toky a provozní ukazatele v jednom rozhraní. Umožňuje posoudit informační strukturu bez připojení k reálné technologii.",
+    "buildStory": "HTML, CSS a JavaScript tvoří samostatnou aplikaci bez build kroku. Chart.js je součástí HTML. Seedovaný generátor vytváří demonstrativní řady, jednotlivé pohledy se sestavují na požádání a grafy se inicializují až po zobrazení plátna.",
     "technologies": [
-      "Angular",
-      "TypeScript",
-      "Django",
-      "PostgreSQL",
-      "REST API",
-      "SCADA integrace"
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Chart.js",
+      "Cloudflare Pages"
     ],
     "techBreakdown": [
       {
-        "part": "Frontend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
-          "Angular",
-          "TypeScript"
-        ]
-      },
-      {
-        "part": "Backend",
-        "items": [
-          "Django",
-          "REST API"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
-          "PostgreSQL"
-        ]
-      },
-      {
-        "part": "Automatizace / Integrace",
-        "items": [
-          "SCADA integrace"
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Chart.js",
+          "Cloudflare Pages"
         ]
       }
     ],
-    "learned": "Naučil jsem se, že rozdělení dashboardu do modulů dává smysl, když kopíruje to, jak provozovatel fyzicky obchází stanici, ne jak je to technicky nejjednodušší. Zjistil jsem, že u kritických parametrů jako H₂S je klíčová okamžitá čitelnost stavu na první pohled, jinak dashboard ztrácí smysl. Přidal jsem demo režim se syntetickými daty, abych mohl ukazovat funkčnost i bez přístupu k reálnému provozu.",
-    "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "status": "Koncept",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/zephyr",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/zephyr/",
     "webUrl": "https://bio.praut.cz/",
     "githubUrl": null,
-    "repositoryAudit": null
+    "repositoryAudit": {
+      "verifiedAt": "2026-10-05",
+      "maturity": "Interaktivní statický prototyp",
+      "facts": [
+        "README výslovně uvádí syntetická data a Chart.js vložený v index.html.",
+        "Generátor časových řad používá seed; registr pohledů odděluje sestavení HTML a inicializaci grafů.",
+        "Kód kontroluje rozměry viditelného plátna a při problému omezeně opakuje inicializaci."
+      ],
+      "limitations": [
+        "Dohledaný projekt neobsahuje backend, živou SCADA integraci ani řízení zařízení.",
+        "Provozní hodnoty neslouží jako měření skutečné bioplynové stanice.",
+        "Konfigurace Cloudflare Pages v README není doklad dostupnosti produkční integrace."
+      ]
+    }
   },
   {
     "sourceId": "16",
@@ -635,7 +451,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Face Animation je série experimentů s animací obličeje pomocí AI nástrojů – od statického portrétu k mluvící nebo emotivně reagující tváři. Testuji na něm generování a synchronizaci pohybu obličeje s audiem a hledám hranice toho, co dnešní nástroje pro AI video umí a kde ještě selhávají.",
     "benefits": "Slouží jako rychlý poligon pro vyzkoušení nových AI video nástrojů před jejich nasazením v klientských nebo interních projektech Praut. Výstupy z něj se dají využít pro avatary, personalizovaný video obsah nebo experimentální kreativní produkci.",
-    "buildStory": "Začal jsem tím, že jsem chtěl zjistit, jak daleko se dá dostat s animací tváře pomocí dostupných AI modelů bez ruční 3D animace. Zkoušel jsem různé kombinace vstupního portrétu, audio stopy a driving videa a porovnával kvalitu synchronizace mluvidel a přirozenost mimiky. Narazil jsem na typické artefakty – deformace při rychlých pohybech hlavy a nekonzistentní osvětlení mezi snímky – a řešil jsem je výběrem vhodnějších zdrojových materiálů a post-processingem. Postupně jsem si tak sestavil vlastní přehled, které nástroje a nastavení dávají použitelné výsledky a které jsou jen efektní demo.",
     "technologies": [
       "AI Video",
       "Animation"
@@ -654,7 +469,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, jak daleko se dá dostat s animací obličeje pomocí dostupných AI modelů bez ruční 3D animace. Narazil jsem na typické artefakty jako deformace při rychlých pohybech hlavy a nekonzistentní osvětlení mezi snímky. Zjistil jsem, že tyhle problémy jde částečně vyřešit výběrem vhodnějších zdrojových materiálů a post-processingem, ne jen lepším modelem.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -672,7 +486,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "AI Spin That Shit je experimentální Python CLI pro koordinaci specializovaných rolí Claude Code. Rozděluje práci mezi plánování, návrh, implementaci, review a testování a zachovává průběh v projektových handoffech a checkpointech.",
     "benefits": "Oddělené role a trvalé artefakty pomáhají navázat na delší agentní běhy a zpětně dohledat jejich průběh. Projekt slouží jako výzkumný prototyp pro hledání bezpečnějšího a reprodukovatelnějšího agentního vývoje.",
-    "buildStory": "Postavil jsem Python orchestrace nad Claude Code CLI, stavovým adresářem a Git workflow. Implementoval jsem journal, checkpointy, retry/backoff, handoff dokumenty a základní statické a security kontroly. Audit zároveň ukázal, že před praktickým nasazením je nutné odstranit obcházení oprávnění, zablokovat nebezpečné Git akce a doplnit testy a CI.",
     "technologies": [
       "Python",
       "Claude Code",
@@ -714,7 +527,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, že agentní orchestrace potřebuje trvalý stav, checkpointy a jasné handoffy, jinak se po chybě nedá bezpečně obnovit. Journal a retry/backoff mi pomohly oddělit přechodné selhání od skutečně zablokované práce. Audit projektu mi také připomněl, že automatizace nesmí obcházet oprávnění a nebezpečné Git operace musí mít tvrdé ochranné hranice.",
     "status": "Koncept",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -746,7 +558,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Nástroj, který ze screenshotu obrazovky vytáhne text pomocí OCR, rozpozná v něm otázku a pomocí lokálního RAG systému nad vlastní znalostní bází vygeneruje odpověď. Celý proces běží lokálně bez závislosti na externím API, včetně LLM inference.",
     "benefits": "Hodí se všude, kde je potřeba rychle zodpovědět otázku, kterou vidím na obrazovce (test, formulář, dokumentace), aniž bych musel text ručně přepisovat nebo posílat data mimo svůj počítač. Díky lokálnímu běhu je řešení vhodné i pro citlivější data, kde nechci nic odesílat do cloudu.",
-    "buildStory": "Řešil jsem hlavně spolehlivost OCR na různě kvalitních screenshotech a odfiltrování šumu (UI prvky, ikony) od skutečného textu otázky. Detekci otázky v extrahovaném textu jsem postavil na jednoduchých heuristikách a promptu pro LLM, aby to zbytečně nepřerostlo do složitého NLP pipeline. Pro odpovědi jsem sestavil lokální RAG nad vlastní znalostní bází, takže model odpovídá s kontextem, ne jen z obecných znalostí. Celý stack jsem drženě lokální i s LLM inferencí, aby řešení nezávisela na žádném externím API a data nikam neodcházela.",
     "technologies": [
       "OCR",
       "RAG",
@@ -769,7 +580,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, že spolehlivost OCR na různě kvalitních screenshotech je největší slabina takového systému a musel jsem odfiltrovat šum jako UI prvky a ikony od skutečného textu otázky. Detekci otázky jsem postavil na jednoduchých heuristikách kombinovaných s promptem pro LLM. Rozhodl jsem se držet celý stack lokální i s LLM inferencí, což vyžadovalo postavit RAG nad vlastní znalostní bází.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -785,60 +595,51 @@
     "title": "Učebnice AI",
     "category": "Produkt",
     "categoryKey": "Produkt",
-    "description": "Učebnice AI je rozsáhlá česká online učebnice umělé inteligence rozdělená do čtyřiceti kapitol, od základů po pokročilá témata jako velké jazykové modely. Ke každé kapitole patří praktický Colab notebook, ve kterém si čtenář probíranou látku rovnou vyzkouší v kódu. Web běží na Next.js a slouží jako ucelený zdroj pro samostudium i výuku.",
-    "benefits": "Česky mluvícím zájemcům o AI umožňuje projít obor systematicky, bez nutnosti skládat si znalosti z roztříštěných anglických zdrojů. Propojení textu s notebooky v Colabu znamená, že se teorie hned zkouší prakticky, což ocení studenti i lidé, kteří se učí sami.",
-    "buildStory": "Psal jsem čtyřicet kapitol postupně tak, aby na sebe logicky navazovaly, od základů matematiky a strojového učení až po velké jazykové modely. Ke každé kapitole jsem připravil Colab notebook s kódem, aby si čtenář teorii mohl hned vyzkoušet bez lokální instalace. Frontend jsem postavil na Next.js, aby se učebnice dobře četla i na mobilu a rychle načítala. Nejvíc času mi zabralo udržet konzistentní strukturu a úroveň obtížnosti napříč tolika kapitolami psanými v různých obdobích.",
+    "description": "Interaktivní učebnice AI propojující autorský obsah, praktické úkoly, evidenci studijního pokroku a kontextového AI tutora.",
+    "benefits": "Student navazuje na svůj uložený postup, odevzdává práci a dostává pomoc v kontextu konkrétní kapitoly. Hodnocení, odměny a oprávnění spravuje aplikace odděleně od odpovědí modelu.",
+    "buildStory": "Platforma v Next.js a Reactu používá Prisma a PostgreSQL pro obsah, odevzdání, hodnocení, historii a odměny. API kontroluje přihlášení, vlastnictví a kanonické klíče obsahu. Ukládání rozpracované práce hlídá revize; opakované odevzdání a tutorové požadavky mají idempotentní kontrakt. AI tutor dostává omezenou historii a kontext kapitoly.",
     "technologies": [
       "Next.js",
       "React",
       "TypeScript",
-      "Google Colab",
-      "Python",
-      "Jupyter Notebook",
-      "MDX",
-      "Vercel"
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth"
     ],
     "techBreakdown": [
       {
-        "part": "Frontend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
           "Next.js",
           "React",
           "TypeScript",
-          "MDX"
-        ]
-      },
-      {
-        "part": "Nástroje & DevOps",
-        "items": [
-          "Google Colab",
-          "Python",
-          "Jupyter Notebook",
-          "Vercel"
+          "Prisma",
+          "PostgreSQL",
+          "NextAuth"
         ]
       }
     ],
-    "learned": "Naučil jsem se, jak náročné je udržet konzistentní strukturu a úroveň obtížnosti napříč čtyřiceti kapitolami psanými v různých obdobích. Ke každé kapitole jsem si ověřil, že propojení teorie s Colab notebookem výrazně pomáhá čtenáři vyzkoušet si kód bez lokální instalace. Volba Next.js se mi osvědčila pro dobrou čitelnost na mobilu.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/ucebnice-ai",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/ucebnice-ai/",
     "webUrl": "https://ucebnice.praut.cz/",
     "githubUrl": "https://github.com/EmperorKunDis/ucebnice-ai-chatbot",
     "repositoryAudit": {
-      "verifiedAt": "2026-08-04",
-      "commit": "ad48f9a53a48",
-      "maturity": "Veřejný vzdělávací projekt + chatbot prototyp",
+      "verifiedAt": "2026-10-05",
+      "commit": "146b1e30b90b",
+      "maturity": "Implementovaná výuková platforma",
       "facts": [
-        "Propojený repozitář pokrývá FastAPI chatbot a generátor kvízů nad Markdown obsahem.",
-        "Chatbot nabízí čtyři API endpointy a nemá serverovou databázi historie.",
-        "Repozitář chatbotu je licencovaný pod MIT."
+        "Zdroj obsahuje API pro kapitoly, úkoly, opakování, pokrok, tutora, administraci a certifikáty.",
+        "Odevzdání používá requestKey; drafty kontrolují revizi a souběžný přepis vracejí jako konflikt.",
+        "SM-2 opakování a přidělení odměny se zapisují v transakci s deduplikační evidencí.",
+        "Tutor ověřuje session, vstupy a přístup k zadání; kontext kapitoly a studentské důkazy jsou rozlišeny."
       ],
       "limitations": [
-        "Auditovaný repozitář představuje chatbotovou část, nikoli celý veřejný web učebnice.",
-        "Obsah a konverzace chatbotu jsou odesílány poskytovateli OpenRouter.",
-        "Grounding na učebnici je promptové omezení, nikoli technická garance bez halucinací."
+        "Tato revize zdrojového kódu není testem veřejného nasazení ani kvality modelových odpovědí.",
+        "Starší samostatný FastAPI chatbot je jiná část historie projektu, nikoli architektura současné platformy.",
+        "Pokyn tutorovi neschvalovat projekty nenahrazuje aplikační oprávnění a kontrolu hodnoticího toku."
       ]
     }
   },
@@ -848,23 +649,26 @@
     "title": "LangChain kurikulum",
     "category": "Moje výrobky",
     "categoryKey": "MojeVyrobky",
-    "description": "Vzdělávací program pro nové kolegy zaměřený na LangChain a stavbu LLM aplikací. Obsahuje třicet lekcí, které kombinují teoretický výklad, párové programování a code review nad reálným kódem. Slouží jako součást onboardingu při nástupu do týmu.",
-    "benefits": "Nový člověk se dostane k produktivní práci s LangChain rychleji než samostudiem, protože si osahá kód pod dohledem a dostane zpětnou vazbu na vlastní řešení. Sjednocuje úroveň znalostí v týmu a snižuje riziko, že si každý osvojí framework jinak.",
-    "buildStory": "Kurikulum jsem sestavoval postupně podle toho, kde noví lidé v praxi nejvíc tápali – od základních řetězců a promptů až po agenty a retrieval. Každou lekci jsem navrhl tak, aby měla teoretickou část a hned navazující cvičení, které se dělá v páru se zkušenějším kolegou. Součástí je i code review krok, kde procházíme napsaný kód a vysvětlujeme rozhodnutí za konkrétními patterny. Materiály jsem průběžně upravoval podle zpětné vazby z prvních běhů onboardingu.",
+    "description": "Dohledaná první lekce LangChain vysvětluje zprávy, šablony promptů a jednoduchý chatbot v Python notebooku a konzoli.",
+    "benefits": "Příklad ukazuje vztah mezi vstupem, sestaveným promptem a odpovědí modelu. Výsledek výuky nebo zkrácení onboardingu nebyly měřeny.",
+    "buildStory": "Soukromý zdroj obsahuje český a ukrajinský notebook první lekce. Příklady používají ChatOpenAI, zprávy a prompt templates; InteractiveChatbot.run komunikuje přes terminál. V revizi nejsou doložené další lekce ani webová aplikace.",
     "technologies": [
+      "Python",
+      "Jupyter",
       "LangChain",
-      "Education"
+      "ChatOpenAI"
     ],
     "techBreakdown": [
       {
-        "part": "AI / LLM",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
+          "Python",
+          "Jupyter",
           "LangChain",
-          "Education"
+          "ChatOpenAI"
         ]
       }
     ],
-    "learned": "Naučil jsem se sestavovat kurikulum podle reálných míst, kde noví kolegové v praxi nejvíc tápou, místo podle abstraktní teorie. Osvědčilo se mi ke každé lekci hned připojit navazující cvičení a code review krok. Materiály jsem se naučil průběžně upravovat podle zpětné vazby z prvních běhů onboardingu.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -872,85 +676,76 @@
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/langchain-kurikulum/",
     "webUrl": null,
     "githubUrl": null,
-    "repositoryAudit": null
-  },
-  {
-    "sourceId": "23",
-    "slug": "ai-glossary",
-    "title": "AI Glossary",
-    "category": "Produkt",
-    "categoryKey": "Produkt",
-    "description": "AI Glossary je webová aplikace pro učení AI terminologie formou hry. Uživatel prochází pojmy z oblasti umělé inteligence, odpovídá na kvízy a sbírá body či odznaky za postup. Aplikace sleduje progres a motivuje k pravidelnému opakování formou herních mechanik.",
-    "benefits": "Řeší problém, že AI terminologie se mění rychleji, než ji lidé stíhají vstřebat, a klasické slovníky se prostě nečtou. Gamifikace drží uživatele u pravidelného opakování a hodí se pro juniory v týmu i pro kohokoli, kdo se potřebuje rychle zorientovat v AI pojmech. Formát kvízů a odznaků funguje lépe než statický seznam definic.",
-    "buildStory": "Vycházel jsem z pozorování, že v týmu i mezi klienty se pořád dokola vysvětlují stejné pojmy z AI, tak jsem to zkusil zabalit do hry místo dalšího wiki článku. Navrhl jsem strukturu obsahu (pojmy, definice, úrovně obtížnosti) a nad ní postavil herní vrstvu s body, postupem a odznaky, aby aplikace držela uživatele u opakování. Řešil jsem hlavně vyvážení obtížnosti kvízů, aby to nebylo ani triviální, ani frustrující, a jednoduché UI, které jde projít na mobilu i za pár minut.",
-    "technologies": [
-      "Web App",
-      "Gamification"
-    ],
-    "techBreakdown": [
-      {
-        "part": "Frontend",
-        "items": [
-          "Web App"
-        ]
-      },
-      {
-        "part": "Herní vývoj",
-        "items": [
-          "Gamification"
-        ]
-      }
-    ],
-    "learned": "Naučil jsem se, že opakované vysvětlování stejných AI pojmů jde efektivně zabalit do herní vrstvy s body, postupem a odznaky. Nejvíc jsem řešil vyvážení obtížnosti kvízů, aby to nebylo ani triviální, ani frustrující.",
-    "status": "Aktivní vývoj",
-    "hosting": "Portfolio ukázka",
-    "source": "Repozitář není veřejně propojený",
-    "profileUrl": "https://svanda.tech/projekty/ai-glossary",
-    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/ai-glossary/",
-    "webUrl": null,
-    "githubUrl": null,
-    "repositoryAudit": null
+    "repositoryAudit": {
+      "verifiedAt": "2026-10-15",
+      "commit": "3910644cfd504013fd140e87b7879b459adce9e2",
+      "maturity": "Dohledaná první notebooková lekce; výukový provoz neověřen",
+      "facts": [
+        "Repozitář v této revizi obsahuje pouze Lekce-1.ipynb a ukrajinskou variantu první lekce.",
+        "Notebook ukazuje ChatOpenAI.invoke, zprávy a šablony promptů.",
+        "InteractiveChatbot.run čte vstup z konzole; nejde o webové UI."
+      ],
+      "limitations": [
+        "Tvrzení o třiceti lekcích nebo ověřeném onboardingu není doložené.",
+        "API volání, notebook, code review a výsledky studentů nebyly při revizi provedeny."
+      ]
+    }
   },
   {
     "sourceId": "25",
     "slug": "puls-akademie",
-    "title": "Puls Akademie",
+    "title": "PULS Akademie",
     "category": "Produkt",
     "categoryKey": "Produkt",
-    "description": "Puls Akademie je online vzdělávací platforma pro tvorbu, správu a distribuci kurzů a výukového obsahu. Zajišťuje registraci a správu studentů, strukturu kurzů a lekcí, sledování postupu a automatizované doručování obsahu podle nastaveného workflow.",
-    "benefits": "Provozovateli kurzů šetří čas tím, že automatizuje opakující se administrativu kolem publikování obsahu a komunikace se studenty. Hodí se pro menší i střední vzdělávací projekty, které potřebují vlastní platformu bez závislosti na drahých SaaS řešeních.",
-    "buildStory": "Stavěl jsem to jako produkt na Django backendu s Celery pro asynchronní zpracování úloh, jako je rozesílání notifikací a plánované publikování obsahu. Řešil jsem hlavně datový model kurzů a lekcí tak, aby šel snadno rozšiřovat o nové typy obsahu bez zásahu do existující struktury. Dost pozornosti jsem věnoval frontovým úlohám v Celery, aby delší operace neblokovaly odezvu aplikace. Postupně jsem doladil i administraci obsahu, aby si provozovatel vystačil bez zásahu vývojáře.",
+    "description": "Vzdělávací platforma s kohortami, odevzdáváním důkazů práce, lektorským hodnocením a návaznými odměnami a certifikáty.",
+    "benefits": "Student, lektor a správce pracují nad společným stavem studia. Každé odevzdání má revizi a rozhodnutí lze dohledat; certifikace navazuje na pravidla absolvování.",
+    "buildStory": "Angular klient komunikuje s Django REST API. Domény rozdělují účty, kohorty, obsah, odevzdání, hodnocení a certifikáty. PostgreSQL uchovává stav a audit, Celery řeší následné úlohy a MinIO soubory. Schválení revize probíhá transakčně a navazující úlohy se spouštějí po commitu.",
     "technologies": [
+      "Angular",
       "Django",
-      "Celery",
+      "Django REST Framework",
       "PostgreSQL",
-      "Python"
+      "Celery",
+      "Redis",
+      "MinIO"
     ],
     "techBreakdown": [
       {
-        "part": "Backend",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
+          "Angular",
           "Django",
+          "Django REST Framework",
+          "PostgreSQL",
           "Celery",
-          "Python"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
-          "PostgreSQL"
+          "Redis",
+          "MinIO"
         ]
       }
     ],
-    "learned": "Naučil jsem se navrhovat datový model kurzů a lekcí tak, aby šel snadno rozšiřovat. Hodně pozornosti jsem věnoval frontovým úlohám v Celery, protože jsem si ověřil, že delší operace jako notifikace nebo plánované publikování obsahu nesmí blokovat odezvu aplikace.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/puls-akademie",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/puls-akademie/",
     "webUrl": "https://puls.praut.cz/",
     "githubUrl": null,
-    "repositoryAudit": null
+    "repositoryAudit": {
+      "verifiedAt": "2026-10-05",
+      "commit": "cca00826f59f",
+      "maturity": "Implementovaná vzdělávací platforma",
+      "facts": [
+        "Submission a SubmissionReview evidují revizi, stav, hodnotitele a rozhodnutí.",
+        "review_submission používá databázovou transakci a zámek řádku; jedna revize má unikátní review.",
+        "Po schválení se přes on_commit předávají úlohy pro aktualizaci pokroku, XP a notifikaci.",
+        "Repozitář obsahuje testy přístupů, odevzdání, hodnocení, certifikátů a administrace."
+      ],
+      "limitations": [
+        "Tato revize nepouštěla testy ani celé produkční nasazení PULS.",
+        "Jitsi konfigurace je označena jako placeholder; živé video nelze vydávat za ověřenou integraci.",
+        "Hodnocení provádí lektor. README vylučuje LLM volání a platební bránu; přístupy přiděluje správce."
+      ]
+    }
   },
   {
     "sourceId": "26",
@@ -960,7 +755,6 @@
     "categoryKey": "Prototype",
     "description": "MontexBau je interaktivní HR/operations prototyp pro stavební workforce. V jednom rozhraní propojuje správu pracovníků, nábor, onboarding, projektové přidělení, logistiku a administrativní workflow.",
     "benefits": "Tým získává společný přehled nad cestou pracovníka od náboru přes dokumenty až po přidělení na projekt. Koncept omezuje ruční přepisování mezi oddělenými tabulkami a komunikačními kanály.",
-    "buildStory": "Postavil jsem statický JavaScript dashboard s lokální datovou vrstvou a oddělenými integračními moduly pro kalendář a externí komunikační službu. Návrh pokrývá náborový kanban, onboarding, projektovou logistiku, dokumenty i analytiku. Veřejná case study záměrně neobsahuje provozní data ani zdroje privátní implementace.",
     "technologies": [
       "JavaScript",
       "HTML",
@@ -985,7 +779,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se rozdělit rozsáhlý provozní dashboard na samostatné moduly pro nábor, onboarding, logistiku, dokumenty a analytiku, aniž by se jejich stav promíchal. Oddělené integrační moduly mi usnadnily napojení kalendáře a externí komunikace bez svázání celého frontendu s jednou službou. U veřejné case study jsem si zároveň ověřil, jak prezentovat architekturu bez zveřejnění provozních dat nebo privátní implementace.",
     "status": "Koncept",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -1010,47 +803,6 @@
     }
   },
   {
-    "sourceId": "28",
-    "slug": "scorpio-seat",
-    "title": "Scorpio Seat",
-    "category": "Moje výrobky",
-    "categoryKey": "MojeVyrobky",
-    "description": "Scorpio Seat je DIY sedačka pro sportovní/závodní použití, kterou jsem navrhl jako stavebnici pro samosestavení. Konstrukce je rozložená do dílů tak, aby se dala poskládat bez speciálního nářadí a levně přepravit i do zahraničí. Vznikla jako hardwarový produkt s důrazem na jednoduchou výrobu a distribuci, ne jen jako jednorázový kus na míru.",
-    "benefits": "Zákazník dostane sedačku, kterou si sám smontuje doma, což šetří náklady na přepravu hotového kusu a umožňuje prodej i mimo ČR. Hodí se pro menší výrobu bez nutnosti skladovat a rozesílat velké hotové kusy.",
-    "buildStory": "Řešil jsem hlavně to, aby se produkt vešel do rozumného balení a dal se poslat jako plochý balík, ne jako neskladný hotový výrobek. Rozkreslil jsem konstrukci na díly, které jde spojit bez speciálního nářadí, a testoval jsem sestavení podle návodu, abych ověřil, že to zvládne i člověk bez zkušeností. Řešil jsem taky volbu materiálu a spojů tak, aby sedačka po sestavení unesla reálné zatížení a nebyla to jen krabice s dílky. Zabýval jsem se i tím, jak produkt zabalit a popsat pro odeslání do zahraničí bez zbytečných komplikací na cle a dopravě.",
-    "technologies": [
-      "Hardware",
-      "Product Design",
-      "DIY Assembly",
-      "Packaging Design"
-    ],
-    "techBreakdown": [
-      {
-        "part": "Hardware",
-        "items": [
-          "Hardware",
-          "DIY Assembly"
-        ]
-      },
-      {
-        "part": "Design",
-        "items": [
-          "Product Design",
-          "Packaging Design"
-        ]
-      }
-    ],
-    "learned": "Naučil jsem se navrhovat konstrukci s ohledem na ploché balení, aby se produkt dal rozumně poslat i do zahraničí. Rozkreslil jsem díly tak, aby šly spojit bez speciálního nářadí, a ověřoval jsem si sestavení přímo podle návodu. Musel jsem taky promyslet volbu materiálu a spojů, aby sedačka po sestavení unesla reálné zatížení.",
-    "status": "Aktivní vývoj",
-    "hosting": "Portfolio ukázka",
-    "source": "Repozitář není veřejně propojený",
-    "profileUrl": "https://svanda.tech/projekty/scorpio-seat",
-    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/scorpio-seat/",
-    "webUrl": null,
-    "githubUrl": null,
-    "repositoryAudit": null
-  },
-  {
     "sourceId": "29",
     "slug": "pj-group-ekosystem",
     "title": "PJ Group ekosystém",
@@ -1058,7 +810,6 @@
     "categoryKey": "Produkt",
     "description": "PJ Group je vícejazyčný digitální rozcestník propojující realitní služby, interiérový design, rekonstrukce a dlouhodobou správu nemovitostí pod jednou značkou.",
     "benefits": "Jeden ekosystém pomáhá návštěvníkovi projít celý životní cyklus nemovitosti a přejít mezi čtyřmi specializovanými službami bez ztráty značkového a obsahového kontextu.",
-    "buildStory": "Postavil jsem Next.js frontend s TypeScriptem, next-intl, Framer Motion a Tailwind CSS. Doplnil jsem šest jazyků, strukturovaná data, sitemapu a cookie consent. Zdrojová aplikace je připravená jako případová studie, ale auditovaný Pages workflow musí být opraven tak, aby publikoval skutečný statický build.",
     "technologies": [
       "Next.js 15",
       "React 18",
@@ -1080,9 +831,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se držet lokalizaci, strukturovaná data, sitemapu, cookie consent i pohybové prvky v jednom konzistentním Next.js frontendu. Šest jazykových verzí mi ukázalo, že obsahová struktura a komponenty musí být navržené pro překlad od začátku. Audit Pages nasazení mi také připomněl, že zelený build sám o sobě neznamená, že workflow publikuje skutečný statický výstup.",
     "status": "Koncept",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/pj-group-ekosystem",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/pj-group-ekosystem/",
@@ -1112,7 +862,6 @@
     "categoryKey": "Produkt",
     "description": "DiplomatenPass Online je německá React SPA prezentující diplomatický consulting, proces spolupráce, galerii, právní informace a kontaktní možnosti v jednotném vizuálním stylu.",
     "benefits": "Koncept strukturuje odborně působící nabídku do srozumitelných obsahových kroků a ukazuje, jak lze sladit služby, proces, právní obsah a kontaktní cestu v jedné responzivní prezentaci.",
-    "buildStory": "Postavil jsem vícestránkovou SPA v Reactu, TypeScriptu a Vite, doplnil Tailwind a shadcn/ui komponenty, právní stránky a GitHub Actions build. Profil projekt označuje jako marketingový webový koncept a nepřebírá nedoložená právní či autorizační tvrzení ze zdrojového obsahu.",
     "technologies": [
       "React 18",
       "TypeScript",
@@ -1132,9 +881,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se postavit vícestránkový marketingový koncept jako konzistentní React SPA a rozdělit společné prvky do znovupoužitelných komponent. TypeScript a komponenty shadcn/ui mi pomohly držet jednotné chování napříč stránkami, zatímco Vite zjednodušil rychlou iteraci a build. Důležitou zkušeností bylo také nepřebírat do veřejné prezentace právní nebo autorizační tvrzení, která zdroj nedokládá.",
     "status": "Koncept",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/diplomatenpass-online",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/diplomatenpass-online/",
@@ -1164,7 +912,6 @@
     "categoryKey": "Produkt",
     "description": "Vojta Žižka je webový prototyp pro přepis audia pomocí Whisperu. FastAPI a Jinja rozhraní obsluhuje nahrání souboru, synchronní ML inference přes FFmpeg/stable-whisper, historii úloh v SQLite a stažení textového výsledku.",
     "benefits": "Projekt ukazuje jednoduchý tok od uploadu audia po lokální speech-to-text výsledek v jednom webovém rozhraní. Docker základ umožňuje aplikaci izolovaně spustit na vlastním serveru.",
-    "buildStory": "Propojil jsem FastAPI, Jinja2, SQLAlchemy/SQLite, FFmpeg a stable-whisper do jednoho monolitického prototypu. Implementoval jsem upload, volbu modelu, historii a stažení výsledku. Audit ukázal, že před produkčním provozem je nutné oddělit inference do fronty, doplnit autentizaci, limity, retenční politiku a testy.",
     "technologies": [
       "Python",
       "FastAPI",
@@ -1215,7 +962,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se propojit upload, zpracování médií, přepis a historii výsledků do jednoho srozumitelného toku. Monolitický prototyp mi rychle ověřil funkčnost, ale současně ukázal hranice synchronní inference a potřebu fronty, autentizace, limitů a retenční politiky před produkčním provozem. Oddělení těchto požadavků od samotného Whisper přepisu mi zpřesnilo pohled na provozní připravenost AI aplikací.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -1247,7 +993,6 @@
     "categoryKey": "Produkt",
     "description": "Jaroš Reko je responzivní vícejazyčný web pro rekonstrukce bytů a domů. Statická Next.js prezentace vysvětluje nabídku služeb, pětikrokový proces spolupráce, ukázkové projekty, reference a kontaktní cestu.",
     "benefits": "Web strukturuje složitou nabídku rekonstrukčních služeb do srozumitelného procesu a šesti jazykových variant. Statický export je rychlý, snadno hostovatelný a nevyžaduje aplikační backend.",
-    "buildStory": "Postavil jsem komponentovou Next.js aplikaci v TypeScriptu, napojil lokalizace přes next-intl a připravil statický export s automatizovaným Pages buildem. Součástí jsou služby, proces, projektové karty a responzivní kontaktní tok. Před plným zveřejněním je potřeba opravit base path, assety a nakonfigurovat formulář.",
     "technologies": [
       "Next.js 15",
       "React",
@@ -1276,9 +1021,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se skládat lokalizovaný klientský web z opakovatelných komponent pro služby, proces, reference a kontakt. Statický export mi ukázal, že base path a assety je potřeba testovat ve skutečném cílovém prostředí, ne jen v lokálním dev serveru. Nedokončený formulář mi zároveň pomohl jasně oddělit hotovou prezentační vrstvu od ještě nenapojené provozní funkce.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/jaros-reko",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/jaros-reko/",
@@ -1308,7 +1052,6 @@
     "categoryKey": "Produkt",
     "description": "Jaroš Design je interaktivní vícejazyčný web pro interiérové studio. Vedle prezentace služeb, portfolia a procesu spolupráce nabízí klientského průvodce deseti interiérovými styly s okamžitou změnou vizuálu a popisu.",
     "benefits": "Návštěvník si může před prvním kontaktem ujasnit preferovaný vizuální směr. Šest lokalizací a statický export umožňují oslovit české i zahraniční publikum bez provozu vlastního backendu.",
-    "buildStory": "Navrhl jsem Next.js App Router aplikaci s TypeScriptem, Tailwindem a next-intl. Implementoval jsem klientský style explorer nad deseti kategoriemi a lokálními vizuálními assety, samostatnou privacy stránku a automatizovaný statický build. Veřejné routování, asset prefix a formulář ještě potřebují dokončit.",
     "technologies": [
       "Next.js 15",
       "React",
@@ -1337,9 +1080,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se navrhnout klientský style explorer tak, aby deset kategorií a lokální vizuální assety zůstaly přehledné a snadno rozšiřitelné. Next.js App Router, TypeScript a next-intl mi pomohly oddělit obsah, navigaci a lokalizaci. Automatizovaný statický build mi pak odhalil, že veřejné routování, asset prefix a formulář je nutné ověřovat jako jeden celek.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/jaros-design",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/jaros-design/",
@@ -1369,7 +1111,6 @@
     "categoryKey": "Produkt",
     "description": "Jaroš Správa je vícejazyčná digitální prezentace služby správy pronajímaných nemovitostí. Web vysvětluje přínosy, čtyřkrokový proces spolupráce, tři tarifní varianty, reference, FAQ a poptávkový tok.",
     "benefits": "Složitá služba je rozdělena do jasných kroků a porovnatelných tarifů, takže majitel rychle pochopí rozsah nabídky. Šest jazykových variant zpřístupňuje prezentaci i zahraničním vlastníkům.",
-    "buildStory": "Vytvořil jsem staticky exportovanou Next.js aplikaci v TypeScriptu s next-intl a Tailwind CSS. Obsahové bloky, tarify a FAQ jsou oddělené od prezentačních komponent a sestavení automatizuje GitHub Actions. Před veřejným použitím je nutné opravit URL strategii, assety, privacy tok a formulář.",
     "technologies": [
       "Next.js 15",
       "React",
@@ -1398,9 +1139,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se oddělit obsahové bloky, tarify a FAQ od prezentačních komponent, aby se web dal měnit bez zásahů do layoutu. Lokalizace přes next-intl mi ukázala význam stabilní struktury obsahu napříč jazykovými verzemi. Při přípravě statického exportu jsem si ověřil, že URL strategie, assety, privacy tok a formulář musí být dokončené před tím, než lze build považovat za veřejně použitelný.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/jaros-sprava",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/jaros-sprava/",
@@ -1430,7 +1170,6 @@
     "categoryKey": "Produkt",
     "description": "Purify Clinic je digitální produktový koncept pro longevity péči. Spojuje veřejnou prezentaci kliniky, klientské rezervace a osobní plán s odděleným staff rozhraním pro provozní workflow.",
     "benefits": "Jednotná produktová architektura ukazuje, jak lze propojit první kontakt klienta, rezervaci, osobní plán a interní správu bez roztříštěného uživatelského zážitku.",
-    "buildStory": "Navrhl jsem Angular frontend pro veřejný web, klientský portál a staff část a doplnil Django REST backend rozdělený do samostatných domén. Veřejný Pages náhled ověřuje prezentační vrstvu; backend a práce s citlivými daty zůstávají mimo veřejný deployment.",
     "technologies": [
       "Angular 21",
       "TypeScript",
@@ -1455,9 +1194,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se rozdělit aplikaci do veřejného webu, klientského portálu a staff části a zároveň držet backendové domény oddělené podle odpovědnosti. JWT autentizace mi připomněla, že přístupové hranice musí být navržené už ve struktuře API. Veřejný Pages náhled jsem záměrně omezil na prezentační vrstvu, protože backend a citlivá data vyžadují jiný způsob nasazení a ověření.",
     "status": "Koncept",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/purify-clinic",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/purify-clinic/",
@@ -1480,56 +1218,6 @@
     }
   },
   {
-    "sourceId": "39",
-    "slug": "hotel-owner-finder",
-    "title": "Hotel Owner Finder",
-    "category": "Moje výrobky",
-    "categoryKey": "MojeVyrobky",
-    "description": "Hotel Owner Finder je nástroj, který ze zadaného seznamu hotelů dohledává jejich skutečné majitele a firemní strukturu. Scraper prochází veřejné rejstříky a webové zdroje, získaná data enrichuje o kontakty, IČO a vazby mezi subjekty a výstup ukládá do strukturované podoby připravené k dalšímu zpracování. Vznikl jako interní nástroj pro Praut s.r.o.",
-    "benefits": "Šetří čas při ručním dohledávání vlastnických struktur hotelů, což je běžně otázka hodin práce v rejstřících a na webu. Hodí se pro sales a business development týmy, které potřebují vědět, s kým skutečně jednají. Výstup je strukturovaný, takže se dá rovnou napojit na CRM nebo další automatizaci.",
-    "buildStory": "Stavěl jsem to jako interní nástroj pro Praut s.r.o., kdy jsme potřebovali rychle a opakovaně dohledávat majitele hotelů z veřejných zdrojů. Řešil jsem hlavně spolehlivý scraping různě strukturovaných webů a rejstříků, kde formát dat nikdy nebyl stejný. Enrichment jsem postavil tak, aby doplňoval chybějící údaje z více zdrojů a spojoval je do jednoho konzistentního záznamu. Narazil jsem na typické problémy scrapingu — rate limity, měnící se HTML struktury a duplicity v datech — a řešil jsem je postupným zpřesňováním pravidel pro parsování a deduplikaci.",
-    "technologies": [
-      "Python",
-      "Scraping",
-      "Data Enrichment",
-      "BeautifulSoup",
-      "Requests",
-      "Pandas"
-    ],
-    "techBreakdown": [
-      {
-        "part": "Backend",
-        "items": [
-          "Python"
-        ]
-      },
-      {
-        "part": "Automatizace / Integrace",
-        "items": [
-          "Scraping",
-          "BeautifulSoup",
-          "Requests"
-        ]
-      },
-      {
-        "part": "Data & Infrastruktura",
-        "items": [
-          "Data Enrichment",
-          "Pandas"
-        ]
-      }
-    ],
-    "learned": "Naučil jsem se, jak spolehlivě scrapovat různě strukturované weby a rejstříky, kde formát dat nikdy nebyl stejný, a jak postavit enrichment doplňující chybějící údaje z více zdrojů. Narazil jsem na typické problémy scrapingu — rate limity, měnící se HTML struktury a duplicity v datech. Zjistil jsem, že tyto problémy jde řešit jen postupným zpřesňováním pravidel pro parsování a deduplikaci.",
-    "status": "Aktivní vývoj",
-    "hosting": "Portfolio ukázka",
-    "source": "Repozitář není veřejně propojený",
-    "profileUrl": "https://svanda.tech/projekty/hotel-owner-finder",
-    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/hotel-owner-finder/",
-    "webUrl": null,
-    "githubUrl": null,
-    "repositoryAudit": null
-  },
-  {
     "sourceId": "41",
     "slug": "family-planner",
     "title": "FamilyPlanner",
@@ -1537,7 +1225,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Family Planner je C++/wxWidgets desktopový koncept pro správu členů domácnosti, úkolů, odměn a budoucího týdenního rozvrhu.",
     "benefits": "Návrh soustředí opakující se domácí povinnosti, odpovědnost a motivaci do jednoho přehledného rozhraní použitelného na běžných desktopových platformách.",
-    "buildStory": "Připravil jsem C++20 aplikaci s wxWidgets a CMake, rozdělil hlavní okno na členy, úkoly, odměny, vlastnosti a náhled rozvrhu. Současný stav je UI skeleton určený pro další doplnění datového modelu, event handlerů a plánovací logiky.",
     "technologies": [
       "C++20",
       "wxWidgets",
@@ -1563,7 +1250,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se rozvrhnout desktopové UI do samostatných oblastí pro členy, úkoly, odměny, vlastnosti a rozvrh dřív, než vznikne finální datový model. wxWidgets mi ukázal praktické rozdíly mezi webovým a nativním rozhraním. Současný UI skeleton mi zároveň pomohl přesně pojmenovat, co ještě chybí: event handlery, plánovací logika a trvalá data.",
     "status": "Koncept",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -1590,50 +1276,46 @@
   {
     "sourceId": "42",
     "slug": "runaway",
-    "title": "RunAway",
+    "title": "EndlessDuško / RunAway",
     "category": "Hobby",
     "categoryKey": "Hobby",
-    "description": "RunAway je C++ gameplay prototyp procedurálního endless runneru v Unreal Engine. Zdrojový výřez propojuje ovládání postavy, boční kameru, hazardy, kolize, rychlý restart a dynamické skládání levelových segmentů.",
-    "benefits": "Modulární levelové segmenty umožňují rozšiřovat trať přes Blueprinty bez přepisování základní herní smyčky. Oddělená logika hráče, hazardů a spawneru udržuje prototyp přehledný pro další iterace.",
-    "buildStory": "Implementoval jsem hráčskou postavu, kameru, kolize a restart po zásahu. Samostatný spawner vybírá z deseti typů segmentů, propojuje jejich triggery a udržuje omezený seznam aktivních částí trati. Veřejný repozitář zachycuje C++ gameplay vrstvu, nikoli kompletní sestavitelný Unreal projekt.",
+    "description": "Endless runner pro Duklockovu komunitu. Herní prototyp v Unreal Engine propojuje ovládání postavy, překážky a navazující segmenty úrovně.",
+    "benefits": "Krátký herní zážitek staví na jednoduchém ovládání a opakovatelném průchodu prostředím. Veřejná verze je dostupná pro Windows na itch.io.",
     "technologies": [
-      "Unreal Engine",
+      "Unreal Engine 5.4",
       "C++",
-      "Blueprint",
-      "Enhanced Input"
+      "MetaHuman"
     ],
     "techBreakdown": [
       {
-        "part": "Herní vývoj",
+        "part": "Technologie v auditovaném zdroji",
         "items": [
-          "Unreal Engine",
+          "Unreal Engine 5.4",
           "C++",
-          "Blueprint",
-          "Enhanced Input"
+          "MetaHuman"
         ]
       }
     ],
-    "learned": "Naučil jsem se spojit C++ gameplay vrstvu s Blueprinty a Enhanced Input tak, aby pohyb, kamera, kolize a restart po zásahu fungovaly jako jeden celek. Procedurální spawner mi ukázal, jak vybírat segmenty, propojovat jejich triggery a zároveň držet omezený počet aktivních částí trati. Veřejný repozitář mě také naučil jasně popsat hranici mezi zdrojovou gameplay vrstvou a kompletním sestavitelným Unreal projektem.",
-    "status": "Koncept",
-    "hosting": "Veřejný provoz",
+    "status": "Aktivní vývoj",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/runaway",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/runaway/",
     "webUrl": "https://emperorkundis.itch.io/runaway",
     "githubUrl": "https://github.com/EmperorKunDis/RunAway",
     "repositoryAudit": {
-      "verifiedAt": "2026-08-04",
+      "verifiedAt": "2026-10-05",
       "commit": "d8573a98b736",
-      "maturity": "Unreal Engine gameplay prototyp",
+      "maturity": "Veřejný prealpha prototyp",
       "facts": [
-        "18 C++ souborů a 861 řádků gameplay kódu.",
-        "Implementuje pohyb, boční kameru, hazardy, kolize a procedurální řazení segmentů.",
-        "Deset Blueprint tříd může tvořit opakovaně použitelné levelové úseky."
+        "Veřejná stránka uvádí EndlessDuško, verzi 0.0.0.2 a platformu Windows.",
+        "RunnerCharacter.cpp implementuje pohyb, skok, boční kameru a restart po zásahu překážkou.",
+        "SpawnLevel.cpp vybírá z deseti typů segmentů a navazuje je podle výstupního bodu předchozího segmentu."
       ],
       "limitations": [
-        "Repozitář je zdrojový výřez a neobsahuje samostatně sestavitelný Unreal projekt.",
-        "Chybí testy, CI, release a licence.",
-        "Veřejnou hratelnou verzi ani práva ke všem assetům audit repozitáře nepotvrdil."
+        "Repozitář obsahuje C++ část, nikoli celý Unreal projekt se všemi assety.",
+        "Veřejná verze je prealpha; stránka uvádí absenci menu a uživatelského rozhraní.",
+        "Binární hra nebyla při přípravě portfolia spouštěna."
       ]
     }
   },
@@ -1645,7 +1327,6 @@
     "categoryKey": "Hobby",
     "description": "JavaRPG je rozsáhlý 2D desktopový RPG prototyp postavený v čisté Javě nad Swing/AWT. Obsahuje vlastní game loop, dlaždicovou mapu, kameru, entity, kolize, animace, dialogy, monstra, události, uživatelské rozhraní a zvuk.",
     "benefits": "Projekt ukazuje stavbu herního základu bez komerčního enginu a jasné rozdělení zodpovědností mezi herní smyčku, mapu, entity, vstup, kolize a UI. Je vhodný jako technická ukázka práce s Java 2D grafikou a stavovým gameplayem.",
-    "buildStory": "Napsal jsem vlastní update/render loop, správu dlaždicového světa a kameru s ořezáváním renderované oblasti. Hierarchie entit pokrývá hráče, NPC a monstra, zatímco samostatné moduly řeší kolize, události, vstup, zvuk a UI. Prototyp je obsahově rozsáhlý, ale před distribucí potřebuje standardní build, vyčištění assetů a dokumentaci.",
     "technologies": [
       "Java 17",
       "Swing",
@@ -1667,7 +1348,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se postavit vlastní update/render loop, dlaždicový svět a kameru s ořezáváním renderované oblasti bez herního enginu. Rozdělení hráče, NPC a monster do hierarchie entit mi ukázalo, kde oddělit kolize, události, vstup, zvuk a UI do samostatných modulů. Rozsah prototypu mi zároveň připomněl význam standardního buildu, čistých assetů a dokumentace pro další použití.",
     "status": "Koncept",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -1699,7 +1379,6 @@
     "categoryKey": "Hobby",
     "description": "D&D Game je TypeScriptový technický základ pro budoucí multiplayer D&D 5e zážitek s AI vypravěčem. Monorepo propojuje pravidlový engine kostek, sdílené multiplayer typy, databázový model kampaní a základ AI postav.",
     "benefits": "Sdílené typy a samostatný pravidlový engine vytvářejí základ, na kterém lze stavět konzistentní klientské i serverové herní mechaniky bez duplikace logiky.",
-    "buildStory": "Navrhl jsem npm/Turborepo monorepo pro Expo klienta, Express/Socket.IO server a sdílené TypeScript balíčky. Implementoval jsem pokročilejší parser hodů, Prisma model kampaní a kontextovou vrstvu AI postav. Mobilní UI a serverový entrypoint jsou zatím nedokončené, proto profil projekt označuje jako technický koncept.",
     "technologies": [
       "TypeScript",
       "Turborepo",
@@ -1749,7 +1428,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se sdílet typy a doménovou logiku mezi mobilním klientem a realtime serverem v jednom Turborepo monorepu. Parser hodů, model kampaní a kontextová AI vrstva mi ukázaly, jak rychle roste složitost digitálních pravidel stolní hry. Nedokončené mobilní UI a serverový entrypoint jsem se naučil otevřeně označit jako hranici technického konceptu, ne jako hotový produkt.",
     "status": "Koncept",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -1781,7 +1459,6 @@
     "categoryKey": "Hobby",
     "description": "Taktická střílečka odehrávající se přímo v prohlížeči, postavená jako webová aplikace bez nutnosti instalace. Hráč ovládá postavu, střílí a plní herní cíle typické pro žánr CS – runda, výzbroj, týmy.",
     "benefits": "Hra běží okamžitě po otevření odkazu, bez stahování klienta nebo instalace herního enginu. Vhodné pro rychlé vyzkoušení konceptu nebo demo hratelnosti přímo v prohlížeči.",
-    "buildStory": "Šlo o hobby projekt, kde jsem si chtěl ověřit, jak daleko se dá dostat s taktickou střílečkou čistě na webových technologiích. Řešil jsem hlavně výkon a plynulost renderování v prohlížeči a ovládání postavy klávesnicí a myší. Nasazení jsem udělal na Vercel, abych měl hru dostupnou přes veřejný odkaz bez vlastního serveru.",
     "technologies": [
       "Web Game",
       "Vercel"
@@ -1800,7 +1477,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se, jak daleko se dá dostat s taktickou střílečkou čistě na webových technologiích v prohlížeči. Hlavně jsem řešil výkon a plynulost renderování a ovládání postavy klávesnicí a myší. Nasazení na Vercel mi umožnilo mít hru dostupnou přes veřejný odkaz bez vlastního serveru.",
     "status": "Aktivní vývoj",
     "hosting": "Soukromé nasazení",
     "source": "Neveřejný zdrojový kód",
@@ -1818,7 +1494,6 @@
     "categoryKey": "Hobby",
     "description": "SVCI / Štvanci je full-stack digitální základna československé herní komunity. Propojuje výraznou 3D prezentaci klanu s členskými profily, událostmi, oceněními a řízenými nástroji pro vedení.",
     "benefits": "Komunita získává jeden veřejný vstupní bod i strukturované členské zázemí. Role oddělují běžné členy od správy a citlivá členská data nejsou součástí veřejného profilu.",
-    "buildStory": "Postavil jsem React/Vite frontend s Three.js vizuálem a Django REST backend nad PostgreSQL. Doplnil jsem přihlášenou členskou část, role, události a ocenění, kontejnerový provoz i automatizovaný backendový, frontendový a Playwright testovací řetězec před deploymentem.",
     "technologies": [
       "React",
       "Vite",
@@ -1859,9 +1534,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se propojit výrazný Three.js vizuál s praktickou členskou aplikací, aniž by 3D vrstva zastínila navigaci a obsah. Role, události a ocenění mi pomohly navrhnout doménu pro komunitní web nad Django REST API a PostgreSQL. Docker Compose a Playwright jsem použil k tomu, aby frontend, backend a uživatelské toky šly ověřovat společně před nasazením.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Repozitář není veřejně propojený",
     "profileUrl": "https://svanda.tech/projekty/svci-stvanci",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/svci-stvanci/",
@@ -1891,7 +1565,6 @@
     "categoryKey": "Prototype",
     "description": "JavaScript Showcase obsahuje dva interaktivní creative-coding experimenty v p5.js: fotografický stippling přes Voronoi/Delaunay geometrii a perspektivní průlet hvězdným polem řízený myší.",
     "benefits": "Ukázky převádějí algoritmy výpočetní geometrie a perspektivní projekce do okamžitě pochopitelné vizuální interakce. Jsou malé, statické a spustitelné bez backendu.",
-    "buildStory": "Ve Voronoi ukázce jsem propojil p5.js s d3-delaunay a jasově váženým posunem bodů směrem k centroidům buněk. Doplnil jsem odpudivou sílu kurzoru a interaktivní překreslování. Druhá ukázka používá vlastní model hvězdy, perspektivní projekci a motion trails pro efekt zrychlení.",
     "technologies": [
       "JavaScript",
       "p5.js",
@@ -1913,7 +1586,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se propojit p5.js s d3-delaunay a pracovat s jasově váženým posunem bodů k centroidům Voronoi buněk. Interaktivní odpudivá síla kurzoru mi ukázala, jak citlivé jsou generativní vizualizace na průběžné přepočty. U hvězdného pole jsem si pak ověřil vlastní perspektivní projekci a motion trails bez potřeby těžkého 3D enginu.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Veřejný repozitář",
@@ -1945,7 +1617,6 @@
     "categoryKey": "HolyGrail",
     "description": "Tatooine Living Architecture je privátní local-first řídicí systém pro agentní workflow. Terminálová platforma propojuje výzkum, úlohy, automatizaci, schvalování a auditní stopu s důrazem na dohledatelnost.",
     "benefits": "Jednotný operační model udržuje dlouhé agentní workflow pod kontrolou: odděluje návrh, provedení, důkazy a schválení a umožňuje zpětně dohledat, proč se konkrétní krok stal.",
-    "buildStory": "Navrhl jsem local-first platformu nad Django a PostgreSQL s primárním Textual/Typer rozhraním. Doplnil jsem lokální workery, scheduler, evidenci artefaktů, schvalovací brány a auditní Ledger. Veřejný profil popisuje produktový model, nikoli interní topologii nebo provozní konfiguraci.",
     "technologies": [
       "Python",
       "Django",
@@ -1987,7 +1658,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se navrhovat local-first agentní platformu kolem trvalého stavu, scheduleru a lokálních workerů místo jednorázových skriptů. Schvalovací brány a auditní Ledger mi ukázaly, že autonomie potřebuje dohledatelnost a jasné hranice oprávnění. Textual a Typer mi zároveň umožnily postavit operátorské rozhraní bez závislosti na webovém frontendu.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -2019,7 +1689,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Účetní centrum je modulární macOS desktopová aplikace propojující česká účetní workflow, bankovní importy, výkazy a lokální zpracování dokladů pomocí OCR.",
     "benefits": "Jedno lokální rozhraní sjednocuje evidenci dokladů, účetní kontroly, párování transakcí a přípravu výkazů. Automatizace omezuje ruční přepis, ale zachovává prostor pro odbornou validaci.",
-    "buildStory": "Aplikaci jsem rozdělil na PyQt6 UI, doménovou účetní vrstvu, SQLite databázi s migracemi a OCR pipeline nad Apple Vision, Tesseractem a OpenCV. Doplnil jsem bankovní importy a exporty do běžných účetních formátů. Název profilu nepoužívám jako tvrzení o plné autonomii — repozitář dokládá automatizovaný účetní desktopový prototyp.",
     "technologies": [
       "Python",
       "PyQt6",
@@ -2056,7 +1725,6 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se oddělit desktopové UI, účetní doménovou logiku, databázi a OCR pipeline tak, aby šly jednotlivé části testovat a měnit samostatně. Kombinace Apple Vision, Tesseractu a OpenCV mi ukázala, že různé typy dokladů potřebují rozdílné zpracování obrazu a rozpoznávání. Bankovní importy a účetní exporty mě zároveň naučily nepoužívat slovo autonomie jako náhradu za přesně popsané automatizované kroky.",
     "status": "Aktivní vývoj",
     "hosting": "Portfolio ukázka",
     "source": "Repozitář není veřejně propojený",
@@ -2088,7 +1756,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Dotační radar sjednocuje veřejné dotační výzvy do jednoho vyhledatelného read-only přehledu. Python pipeline získává data z katalogů a sitemap, normalizuje termíny, deduplikuje záznamy a generuje statický dataset pro rychlý webový frontend.",
     "benefits": "Firmy, obce, školy, neziskové organizace a poradci mohou procházet více veřejných zdrojů na jednom místě. Každá položka zůstává dohledatelná k původnímu zdroji a frontend nevyžaduje účet ani backendovou databázi.",
-    "buildStory": "Navrhl jsem standard-library Python pipeline se sitemapovými a HTML adaptéry, stabilními hashovými ID, normalizací, deduplikací a validačními kontrolami. Výsledný data.js obsluhuje statický JavaScript frontend s fulltextem, filtrováním a řazením. Aktualizaci i Pages nasazení spouští GitHub Actions.",
     "technologies": [
       "Python 3.12",
       "HTML",
@@ -2120,9 +1787,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se postavit datovou pipeline pouze nad standardní knihovnou Pythonu a přitom zachovat stabilní identifikátory, normalizaci, deduplikaci a validační kontroly. Oddělení sitemapových a HTML adaptérů mi usnadnilo práci s různými zdroji. Statický JavaScript frontend a automatická aktualizace přes GitHub Actions mi ukázaly, že read-only katalog lze provozovat jednoduše bez aplikačního backendu.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/dotace",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/dotace/",
@@ -2152,7 +1818,6 @@
     "categoryKey": "MojeVyrobky",
     "description": "Investor Radar je živý výzkumný dashboard pro orientaci mezi fondy, angel investory, akcelerátory a grantovými příležitostmi. Umožňuje vyhledávání, detail, transparentní prioritizaci a CSV export.",
     "benefits": "Zakladatel nebo analytik může na jednom místě porovnat typ investora, fázi, oborovou shodu a dostupnost doložených veřejných zdrojů bez tvrzení, že skóre nahrazuje vlastní due diligence.",
-    "buildStory": "Postavil jsem statický JavaScript dashboard napájený daty obnovovanými Python pipeline v GitHub Actions. Heuristické skóre zůstává čitelné ve frontendovém kódu a výsledky lze filtrovat a exportovat. GitHub Pages a vlastní doména poskytují rychlý read-only provoz bez aplikačního backendu.",
     "technologies": [
       "Python",
       "JavaScript",
@@ -2184,9 +1849,8 @@
         ]
       }
     ],
-    "learned": "Naučil jsem se oddělit obnovu dat v Pythonu od rychlého read-only dashboardu v JavaScriptu. Heuristické skóre jsem nechal čitelné ve frontendovém kódu, což mi pomohlo udržet hodnocení vysvětlitelné místo skryté černé skříňky. GitHub Actions a Pages mi ukázaly, jak automaticky obnovovat a publikovat datový přehled bez provozu aplikačního serveru.",
     "status": "Aktivní vývoj",
-    "hosting": "Veřejný provoz",
+    "hosting": "Veřejný odkaz; provoz neověřen",
     "source": "Veřejný repozitář",
     "profileUrl": "https://svanda.tech/projekty/investori",
     "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/investori/",
@@ -2205,6 +1869,58 @@
         "Nejde o Django/PostgreSQL/Angular CRM ani systém pro správu investorských vztahů.",
         "Skóre není AI predikce, investiční doporučení ani důkaz zájmu konkrétního investora.",
         "Osobní kontaktní údaje nejsou součástí portfolia a jejich aktuálnost a právní režim vyžadují kontrolu."
+      ]
+    }
+  },
+  {
+    "sourceId": "54",
+    "slug": "jobradar",
+    "title": "JobRadar",
+    "category": "Produkt",
+    "categoryKey": "Produkt",
+    "description": "Datovaná revize zdroje odděluje sběr nabídek, pracovní stav, zaznamenané rozhodnutí a omezenou read-only prezentaci. Současná veřejná instalace nebyla ověřena.",
+    "benefits": "Pracovní stav a zaznamenané oprávnění jsou oddělené od veřejné projekce.",
+    "buildStory": "Prohlédnutý commit obsahuje lokální Python/FastAPI systém se SQLite, transakčními rozhodnutími nad konkrétní verzí nabídky a omezenou veřejnou API projekcí. To není doklad aktuálního nasazení, úspěšného odeslání ani přesnosti posouzení.",
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "SQLite"
+    ],
+    "techBreakdown": [
+      {
+        "part": "Technologie v auditovaném zdroji",
+        "items": [
+          "Python",
+          "FastAPI",
+          "Pydantic",
+          "SQLite"
+        ]
+      }
+    ],
+    "status": "Aktivní vývoj",
+    "hosting": "Veřejný odkaz; provoz neověřen",
+    "source": "Repozitář není veřejně propojený",
+    "profileUrl": "https://svanda.tech/projekty/jobradar",
+    "onePagerUrl": "https://emperorkundis.github.io/macos-portfolio-pages/jobradar/",
+    "webUrl": "https://svanda.tech/JobRadar/",
+    "githubUrl": null,
+    "repositoryAudit": {
+      "verifiedAt": "2026-10-15",
+      "commit": "256022c975866dc27cc6210e4e31f1c15d7ab0b1",
+      "maturity": "Stav implementace podle prohlédnutého commitu; provoz neověřen",
+      "facts": [
+        "Doménový kontrakt popisuje nabídku, její původ a dostupnost. Normalizace odkazů a obsahové aliasy podporují rozpoznání souvisejících záznamů; kontrola způsobilosti posuzuje mimo jiné doložené datum a dostupnost.",
+        "Schéma odděluje zdroje, nabídky, běhy, modelové úlohy, zprávy, rozhodnutí, události a zámky. Cizí klíče a unikátní vazby vymezují části datového toku.",
+        "Rozhodnutí se zapisuje v transakci a váže se na fingerprint nabídky. Další autorizace znovu kontroluje kladné rozhodnutí i shodu nabídky. Worker rozlišuje přípravu, čekání na data, nejistý výsledek a blokaci.",
+        "Read-only výstup skládá vybrané stavy a omezené události místo raw payloadů zpráv, profilu nebo CV. Textový helper odstraňuje e-mailové adresy. Aktivita modelu vychází ze záznamu úlohy a platného vlastnického zámku."
+      ],
+      "limitations": [
+        "Prohlédnut byl uvedený commit, nikoli běžící aplikace, produkční dostupnost nebo výsledek testů.",
+        "Pracovní kopie obsahuje novější nezapsané změny. Jejich chování není připsáno uvedenému commitu a současný stav nebyl ověřen.",
+        "Novější statický exportér a novější politika automatického schvalování nejsou součástí tohoto prohlédnutého commitu; studie je nevydává za jeho implementaci.",
+        "Existence modelového posouzení není měřením jeho přesnosti. Aktuální veřejná revize, doručení zpráv a úplné portálové podání nebyly ověřeny.",
+        "Zobrazení vybraných stavů není úplný audit ochrany osobních údajů, všech veřejných cest nebo všech exportovaných souborů."
       ]
     }
   }
